@@ -1,0 +1,3684 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Dominican Hubvix: Innovación, digitalización y gestión de proyectos en República Dominicana. Impulsamos startups y empresas con tecnología avanzada.">
+    <meta name="keywords" content="Dominican Hubvix, Hubvix, innovación digital, startups RD, transformación digital, gestión de proyectos RD">
+    <title>Dominican hubvix - Innovación y Transformación Digital en República Dominicana</title>    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #000000fd;
+            --secondary-color: #0099fffd;
+            --accent-color: #00ff88;
+            --light-bg: #ffffff;
+            --dark-bg: #000000;
+            --text-light: #ffffff;
+            --text-dark: #333333;
+            --gradient: linear-gradient(135deg, var(--primary-color), #000000);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            background-color: var(--light-bg);
+            color: var(--text-dark);
+            transition: all 0.3s ease;
+            overflow-x: hidden;
+        }
+
+        body.dark-mode {
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+        }
+
+        /* Preloader */
+        .preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--light-bg);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease;
+        }
+
+        .preloader.fade-out {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .loader {
+            width: 50px;
+            height: 50px;
+            border: 5px solid #fffbfb;
+            border-top: 5px solid var(--primary-color);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Scroll Indicator */
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: #0099fffd;
+            z-index: 1001;
+        }
+
+        .scroll-progress-bar {
+            height: 100%;
+            background: var(--primary-color);
+            width: 0%;
+            transition: width 0.1s ease;
+        }
+
+        /* Header y Navegación */
+        header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            background: rgb(0, 0, 0);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        header {
+          color: white;
+        }
+        header .logo{
+          color: white;
+        }
+        .dark-mode header {
+            background: rgba(26, 26, 26, 0.95);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: inherit;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-color);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            background: none;
+            border: none;
+            color: inherit;
+            font-size: 1.5rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            padding-top: 80px;
+        }
+
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: var(--secondary-color);
+            background-image: url('/api/placeholder/1920/1080');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            color: var(--text-light);
+            max-width: 800px;
+            padding: 2rem;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: var(--gradient);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(250, 250, 250, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 255, 255, 0.4);
+        }
+
+        /* Stats Counter */
+        .stats {
+            padding: 4rem 5%;
+            background: var(--gradient);
+            color: var(--text-light);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .stat-item {
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Sobre Nosotros */
+        .about {
+            padding: 5rem 5%;
+            background: var(--light-bg);
+            
+        }
+
+        .dark-mode .about {
+            background: var(--dark-bg);
+        }
+
+        .about-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text {
+            padding-right: 2rem;
+        }
+
+        .about-image {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 05px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Servicios */
+        .services {
+            padding: 5rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .section-title p {
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background:#2563eb;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .dark-mode .service-card {
+            background: var(--secondary-color);
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 0;
+        }
+
+        .service-card:hover::before {
+            opacity: 0.1;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 25px rgba(255, 51, 102, 0.2);
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .service-card h3 {
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .service-card p {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Portafolio */
+        .portfolio {
+            padding: 5rem 5%;
+            background: #f9f9f9;
+        }
+
+        .dark-mode .portfolio {
+            background: #222;
+        }
+
+        .portfolio-filters {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .filter-btn {
+            padding: 0.5rem 1.5rem;
+            border: none;
+            background: white;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .filter-btn.active {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .portfolio-item {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .portfolio-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .portfolio-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .portfolio-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            padding: 1rem;
+            text-align: center;
+            color: white;
+        }
+
+        .portfolio-item:hover .portfolio-overlay {
+            opacity: 1;
+        }
+
+        /* Testimonios */
+        .testimonials {
+            padding: 5rem 5%;
+            background: white;
+        }
+
+        .dark-mode .testimonials {
+            background: var(--dark-bg);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .testimonial-card {
+            padding: 2rem;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .dark-mode .testimonial-card {
+            background: var(--secondary-color);
+        }
+
+        .testimonial-quote {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .author-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+
+        .author-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .author-info h4 {
+            margin-bottom: 0.2rem;
+        }
+
+        .author-info p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .dark-mode .blog {
+            background: #222;
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .blog-card {
+    background: rgb(0, 0, 0);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.dark-mode .blog-card {
+    background: var(--secondary-color);
+}
+
+.blog-image {
+    width: 100%;
+    height: 200px;
+}
+
+.blog-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.blog-content {
+    padding: 1.5rem;
+}
+
+.blog-date {
+    color: var(--primary-color);
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.blog-title {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.blog-excerpt {
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+.read-more {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Contacto */
+.contact {
+    padding: 5rem 5%;
+    background: white;
+}
+
+.dark-mode .contact {
+    background: var(--dark-bg);
+}
+
+.contact-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 4rem;
+}
+
+.contact-info {
+    padding-right: 2rem;
+}
+
+.contact-info h3 {
+    margin-bottom: 1.5rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.contact-icon {
+    width: 40px;
+    height: 40px;
+    background: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-form {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.329);
+}
+
+.dark-mode .contact-form {
+    background: var(--secondary-color);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.form-input,
+.form-textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: transparent;
+    color: inherit;
+}
+
+.form-textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+/* Footer */
+footer {
+    color:#ffffff;
+    background: var(--secondary-color);
+    color: var(--text-light);
+    padding: 4rem 5% 2rem;
+}
+
+.footer-content {
+  color:#000000;
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
+    margin-bottom: 3rem;
+}
+
+.footer-section h3 {
+    margin-bottom: 1.5rem;
+}
+
+.footer-links {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 0.8rem;
+}
+
+.footer-links a {
+    color: var(--text-light);
+    text-decoration: none;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.footer-links a:hover {
+    opacity: 1;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-link {
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-light);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-link:hover {
+    color:#ffffff;
+    background: var(--primary-color);
+    transform: translateY(-3px);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Newsletter */
+.newsletter {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.newsletter input {
+    flex: 1;
+    padding: 0.8rem;
+    border: none;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text-light);
+}
+
+.newsletter button {
+    padding: 0.8rem 1.5rem;
+    background: var(--primary-color);
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.newsletter button:hover {
+    background: #ff4d7d;
+}
+
+/* Chatbot01 */
+.chatbot01 {
+    position: fixed;
+    bottom: 6rem;
+    right: 2rem;
+    width: 60px;
+    height: 60px;
+   
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.chatbot01:hover {
+    transform: scale(1.1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: var(--light-bg);
+        padding: 1rem;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .dark-mode .nav-links {
+        background: var(--dark-bg);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .about-content,
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+
+    .about-image {
+        margin-top: 2rem;
+    }
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate {
+    animation: fadeIn 0.6s ease forwards;
+}
+</style>
+<style>
+  /* Estilos para nuevas secciones */
+  
+  /* Portfolio */
+  .portfolio {
+    padding: 5rem 5%;
+    background: #f9f9f9;
+  }
+  
+  .dark-mode .portfolio {
+    background: #222;
+  }
+  
+  .portfolio-filters {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .filter-btn {
+    padding: 0.5rem 1.5rem;
+    border: none;
+    background: white;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+  
+  .dark-mode .filter-btn {
+    background: var(--secondary-color);
+  }
+  
+  .filter-btn.active {
+    background: var(--primary-color);
+    color: white;
+  }
+  
+  .portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  
+  .cta-button.small {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+  
+  /* Clients section */
+  .clients {
+    padding: 5rem 5%;
+    background: white;
+  }
+  
+  .dark-mode .clients {
+    background: var(--dark-bg);
+  }
+  
+  .clients-slider {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  
+  .client-logo {
+    filter: grayscale(100%);
+    opacity: 0.6;
+    transition: all 0.3s ease;
+    padding: 1rem;
+  }
+  
+  .client-logo:hover {
+    filter: grayscale(0);
+    opacity: 1;
+  }
+  
+  /* CTA Section */
+  .cta-section {
+    padding: 5rem 5%;
+    background: var(--gradient);
+    color: white;
+    text-align: center;
+  }
+  
+  .cta-container {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  
+  .cta-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .cta-section p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+  }
+  
+  .cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .cta-button.secondary {
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(10px);
+  }
+  
+  .cta-button.secondary:hover {
+    background: rgba(255,255,255,0.3);
+  }
+  
+  /* FAQ Section */
+  .faq-section {
+    padding: 5rem 5%;
+    background: #f9f9f9;
+  }
+  
+  .dark-mode .faq-section {
+    background: #222;
+  }
+  
+  .faq-container {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  
+  .faq-item {
+    margin-bottom: 1rem;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    overflow: hidden;
+    background: white;
+  }
+  
+  .dark-mode .faq-item {
+    border-color: #333;
+    background: var(--secondary-color);
+  }
+  
+  .faq-question {
+    padding: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  .faq-question h3 {
+    margin: 0;
+    font-size: 1.1rem;
+  }
+  
+  .faq-icon {
+    transition: transform 0.3s ease;
+  }
+  
+  .faq-answer {
+    padding: 0 1.5rem;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+  
+  .faq-item.active .faq-answer {
+    padding: 0 1.5rem 1.5rem;
+    max-height: 500px;
+  }
+  
+  .faq-item.active .faq-icon {
+    transform: rotate(45deg);
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .cta-section h2 {
+      font-size: 2rem;
+    }
+    
+    .clients-slider {
+      gap: 1rem;
+    }
+    
+    .client-logo img {
+      max-width: 120px;
+    }
+  }
+</style>
+<style>
+  .modal-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1500;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+  }
+  
+  .modal-container.active {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .modal {
+    background-color: var(--light-bg);
+    width: 90%;
+    max-width: 700px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+    transform: translateY(-20px);
+    transition: all 0.3s ease;
+  }
+  
+  .dark-mode .modal {
+    background-color: var(--secondary-color);
+  }
+  
+  .modal-container.active .modal {
+    transform: translateY(0);
+  }
+  
+  .modal-header {
+    background: var(--gradient);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+  }
+  
+  .close-modal {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .close-modal:hover {
+    transform: scale(1.2);
+  }
+  
+  .modal-content {
+    padding: 30px;
+  }
+  
+  .modal-content p {
+    margin-bottom: 20px;
+    line-height: 1.6;
+  }
+  
+  .modal-content ul {
+    padding-left: 20px;
+  }
+  
+  .modal-content li {
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 25px;
+  }
+  
+  .modal-content li:before {
+    content: '';
+    position: absolute;
+    left: 0;
+  }
+</style>
+</head>
+    <header>
+        <nav>
+            <a href="#" class="logo">Dominican hubvix</a>
+            <button class="hamburger">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="nav-links">
+                <a href="#inicio">Inicio</a>
+                <a href="#Servicios">Servicios</a>
+                <a href="#sobre-nosotros">Sobre Nosotros</a>
+                <a href="#portafolio">Portafolio</a>
+                <a href="#contacto">Contacto</a>
+            </div>
+        </nav>
+    </header>
+    <section class="hero" id="primerboton">
+        <div id="particles-js"></div>
+        <div class="hero-content" data-aos="fade-up">
+            <h1 class="hero-title">Dominican hubvix te brinda Innovación y desarrollo</h1>
+            <a href="#" class="cta-button" id="openEvaluation">lleva tu negocio al éxito digital</a>
+        </div>
+    </section>
+<!-- Add this at the end of the body tag, before the existing scripts -->
+<div id="evaluation-modal" class="modal-overlay">
+  <div class="modal-content">
+      <div class="modal-header">
+          <h2>Evaluación Empresarial</h2>
+          <button class="modal-close">&times;</button>
+      </div>
+      <div class="modal-body">
+          <div class="services-grid">
+              <div class="service-card" data-service="proyectos">
+                  <div class="service-icon">🚀</div>
+                  <h3>Evalue su empresa con nosotros</h3>
+              </div>
+          </div>
+
+          <form id="" class="evaluation-form" style="display: none;">
+              <div class="company-info">
+                  <input type="text" id="companyName" placeholder="Nombre de la empresa" required>
+                  <input type="email" id="companyEmail" placeholder="Correo electrónico" required>
+              </div>
+              <div id="questions"></div>
+              <button type="button" class="button" onclick="calculateResults()">Finalizar Evaluación</button>
+          </form>
+
+          <div class="result" style="display: none;">
+              <h2>Resultados de la Evaluación</h2>
+              <div class="result-score"></div>
+              <p class="result-message"></p>
+              <button class="button" onclick="resetEvaluation()">Nueva Evaluación</button>
+          </div>
+      </div>
+  </div>
+</div>
+
+<style>
+.modal-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  overflow-y: auto;
+}
+
+.modal-header {
+  background-color: #333333;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.modal-close {
+  color: white;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.modal-body {
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
+/* Add these styles to your existing CSS */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.service-card {
+  background: #0099fffd;
+  padding: 1.5rem;
+  border-radius: 8px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.service-card:hover {
+  transform: translateY(-3px);
+  background: #6fadff;
+}
+
+.service-icon {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.button {
+  background-color: #2563eb;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.2s;
+}
+
+.button:hover {
+  background-color: #1d4ed8;
+}
+</style>
+
+<script>
+// Add this to your existing JavaScript
+document.addEventListener('DOMContentLoaded', function() {
+  const openEvalButton = document.getElementById('openEvaluation');
+  const evalModal = document.getElementById('evaluation-modal');
+  const closeModalBtn = document.querySelector('.modal-close');
+
+  // Open modal when clicking the CTA button
+  openEvalButton.addEventListener('click', function(e) {
+      e.preventDefault();
+      evalModal.style.display = 'block';
+      document.body.style.overflow = 'hidden'; // Prevent background scrolling
+  });
+
+  // Close modal when clicking the close button
+  closeModalBtn.addEventListener('click', function() {
+      closeEvalModal();
+  });
+
+  // Close modal when clicking outside
+  evalModal.addEventListener('click', function(e) {
+      if (e.target === evalModal) {
+          closeEvalModal();
+      }
+  });
+
+  function closeEvalModal() {
+      evalModal.style.display = 'none';
+      document.body.style.overflow = 'auto'; // Restore scrolling
+      resetEvaluation(); // Reset the form
+  }
+
+  // Add ESC key support to close modal
+  document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && evalModal.style.display === 'block') {
+          closeEvalModal();
+      }
+  });
+
+  // Modify the showEvaluationForm function
+  window.showEvaluationForm = function() {
+      document.querySelector('.services-grid').style.display = 'none';
+      const evaluationForm = document.querySelector('.evaluation-form');
+      evaluationForm.style.display = 'block';
+      document.querySelector('.result').style.display = 'none';
+      selectedOptions = {};
+      
+      const questionsContainer = document.getElementById('questions');
+      questionsContainer.innerHTML = '';
+      
+      evaluationQuestions[currentService].forEach((q, index) => {
+          const questionDiv = document.createElement('div');
+          questionDiv.className = 'question';
+          
+          const questionText = document.createElement('h3');
+          questionText.textContent = q.question;
+          questionDiv.appendChild(questionText);
+          
+          const optionsDiv = document.createElement('div');
+          optionsDiv.className = 'options';
+          
+          q.options.forEach((opt, optIndex) => {
+              const option = document.createElement('div');
+              option.className = 'option';
+              option.textContent = opt.text;
+              option.onclick = () => selectOption(index, optIndex, option);
+              optionsDiv.appendChild(option);
+          });
+          
+          questionDiv.appendChild(optionsDiv);
+          questionsContainer.appendChild(questionDiv);
+      });
+  };
+
+  // Modify the resetEvaluation function
+  window.resetEvaluation = function() {
+      document.querySelector('.result').style.display = 'none';
+      document.querySelector('.services-grid').style.display = 'grid';
+      document.querySelector('.evaluation-form').style.display = 'none';
+      document.getElementById('companyName').value = '';
+      document.getElementById('companyEmail').value = '';
+      selectedOptions = {};
+      currentService = '';
+  };
+});
+</script>
+<!-- Estilos adicionales específicos para el modal de evaluación -->
+<style>
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+#evaluation-modal .modal {
+    max-width: 500px;
+}
+</style>
+    <section class="stats">
+        <div class="stats-grid">
+            <div class="stat-item" data-aos="fade-up">
+                <div class="stat-number" data-count="4">0</div>
+                <p>Proyectos Completados</p>
+            </div>
+            <div class="stat-item" data-aos="fade-up" data-aos-delay="100">
+                <div class="stat-number" data-count="2">0</div>
+                <p>Gestion de Proyectos</p>
+            </div>
+            <div class="stat-item" data-aos="fade-up" data-aos-delay="200">
+                <div class="stat-number" data-count="3">0</div>
+                <p>Años de Experiencia</p>
+            </div>
+            <div class="stat-item" data-aos="fade-up" data-aos-delay="300">
+                <div class="stat-number" data-count="13">0</div>
+                <p>proyectos en curso</p>
+            </div>
+        </div>
+    </section>
+    <section class="about" id="sobre-nosotros">
+        <div class="about-content">
+            <div class="about-text" data-aos="fade-right">
+                <h2>Sobre Nosotros</h2>
+                <p>Dominican Hubvix (DH) es una institución líder en la gestión e impulso de proyectos empresariales, reconocida por ser pionera en la transformación digital y en la innovación empresarial. Nuestro equipo de expertos fusiona creatividad y tecnología para potenciar el crecimiento de tu negocio, ya sea en el ámbito digital o físico, alcanzando el máximo nivel de desarrollo empresarial para tu organización. En DH, creemos firmemente que "no hay límites para mejorar" y trabajamos contigo para convertir esa visión en realidad.</p>
+            </div>
+            <div class="about-image" data-aos="fade-left">
+                <img src="https://i.pinimg.com/736x/e1/ea/20/e1ea20bcf8ed148ccdbfbe23dcb64222.jpg" alt="Equipo Hubvix">
+            </div>
+        </div>
+    </section>
+    <section class="services" id="servicios">
+        <div class="section-title" data-aos="fade-up">
+            <h2>Servicios que ofrecemos</h2>
+            <p>Cada servicio cuenta con un enfoque personalizado para satisfacer las necesidades únicas de cada cliente.</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card" data-aos="fade-up">
+                <i class="fas fa-tasks service-icon"></i>
+                <h3>Gestión de Proyectos</h3>
+                <p>Desde la planificación hasta la ejecución y optimización de tus proyectos empresariales.</p>
+            </div>
+            <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                <i class="fas fa-digital-tachograph service-icon"></i>
+                <h3>Digitalización de Empresas</h3>
+                <p>Transformamos tu negocio con soluciones digitales innovadoras y automatización de procesos.</p>
+            </div>
+            <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                <i class="fas fa-lightbulb service-icon"></i>
+                <h3>Innovación y Desarrollo</h3>
+                <p>Incubación de startups y generación de estrategias disruptivas para tu negocio.</p>
+            </div>
+            <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                <i class="fas fa-rocket service-icon"></i>
+                <h3>Impulso Empresarial</h3>
+                <p>Mentorías, networking y financiamiento estratégico para nuevos empresarios.</p>
+            </div>
+        </div>
+    </section>
+    <section class="portfolio" id="portafolio">
+      <div class="section-title" data-aos="fade-up">
+        <h2>Nuestro Portafolio</h2>
+        <p>Conoce algunos de nuestros proyectos más destacados</p>
+      </div>
+      
+      <div class="portfolio-filters" data-aos="fade-up">
+        <button class="filter-btn active" data-filter="todos">Todos</button>
+        <button class="filter-btn" data-filter="gestion">Gestión</button>
+        <button class="filter-btn" data-filter="digitalizacion">Digitalización</button>
+        <button class="filter-btn" data-filter="innovacion">Innovación</button>
+      </div>
+    
+      <div class="portfolio-grid">
+        <div class="portfolio-item" data-category="digitalizacion" data-aos="fade-up">
+          <img src="https://i.pinimg.com/736x/36/f3/6e/36f36e8b23084f4f75da47a353521d1e.jpg" alt="Proyecto de Gestión">
+          <div class="portfolio-overlay">
+            <h3>Digitalizacion empresarial</h3>
+            <p>Desarrollo web - Sector salud</p>
+            <a href="#" class="cta-button small">Ver detalles</a>
+          </div>
+        </div>
+        <div class="portfolio-item" data-category="gestion" data-aos="fade-up" data-aos-delay="100">
+          <img src="https://scontent.fsti4-2.fna.fbcdn.net/v/t1.15752-9/478265202_1804853177034447_249973698979581056_n.png?_nc_cat=105&ccb=1-7&_nc_sid=0024fc&_nc_ohc=4thxc0aWlZEQ7kNvgFvnAxt&_nc_oc=AdguW2aS5x1gn9oGgPf2b1g5qSvUBjJXqjNOYjzbx4MIpR5XT_zmuax16Ebb4XrXNkE&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fsti4-2.fna&oh=03_Q7cD1gHPiX-_bM4m2767B833--Tox9tfdI5WG0qfQWdvUbyCzw&oe=67E1178D" alt="Proyecto de Digitalización">
+          <div class="portfolio-overlay">
+            <h3>Gestion de proyectos</h3>
+            <p>Automatización de procesos - Sector hotelero</p>
+            <a href="#" class="cta-button small">Ver detalles</a>
+          </div>
+        </div>
+        <div class="portfolio-item" data-category="innovacion" data-aos="fade-up" data-aos-delay="200">
+          <img src="https://scontent.fsti4-2.fna.fbcdn.net/v/t1.15752-9/476200484_1164371728689633_822713249362344919_n.png?_nc_cat=107&ccb=1-7&_nc_sid=0024fc&_nc_ohc=XNq8f7_65soQ7kNvgEbm6yC&_nc_oc=AdiMhEPBn3n0KbrxOf-K0-upK6NYHChHd6i6a_D3gmM2sbzLQMHe-6mgU77jo_ov7OY&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fsti4-2.fna&oh=03_Q7cD1gEltRBs3G7lnk9BD8abL-ygU9jvt_8Y-SjT3vLxv2iyUw&oe=67E18934" alt="Proyecto de Innovación">
+          <div class="portfolio-overlay">
+            <h3>Plataforma de Innovación</h3>
+            <p>Desarrollo de marketplace para startup tecnológica</p>
+            <a href="#" class="cta-button small">Ver detalles</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Modal del Portafolio -->
+<div class="portfolio-modal-container">
+    <div class="portfolio-modal">
+      <div class="modal-header">
+        <h2 id="modal-title">Detalles del Proyecto</h2>
+        <button class="modal-close-btn">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-gallery">
+          <div class="gallery-main">
+            <img id="main-image" src="/api/placeholder/800/450" alt="Imagen principal del proyecto">
+          </div>
+          <div class="gallery-thumbnails">
+            <img class="thumbnail" src="/api/placeholder/150/100" alt="Miniatura 1" data-src="/api/placeholder/800/450">
+            <img class="thumbnail" src="/api/placeholder/150/100" alt="Miniatura 2" data-src="/api/placeholder/800/450">
+            <img class="thumbnail" src="/api/placeholder/150/100" alt="Miniatura 3" data-src="/api/placeholder/800/450">
+          </div>
+        </div>
+        <div class="modal-content">
+          <h3 id="modal-subtitle">Nombre del Proyecto</h3>
+          <div class="project-meta">
+            <div class="meta-item">
+              <i class="fas fa-calendar"></i>
+              <span id="project-date">2024</span>
+            </div>
+            <div class="meta-item">
+              <i class="fas fa-tag"></i>
+              <span id="project-category">Categoría</span>
+            </div>
+            <div class="meta-item">
+              <i class="fas fa-user"></i>
+              <span id="project-client">Cliente</span>
+            </div>
+          </div>
+          <div class="project-description">
+            <p id="modal-description">Descripción detallada del proyecto...</p>
+          </div>
+          <div class="project-features">
+            <h4>Características principales</h4>
+            <ul id="project-features">
+              <li>Característica 1</li>
+              <li>Característica 2</li>
+              <li>Característica 3</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <a href="#" class="cta-button modal-cta">Solicitar un proyecto similar</a>
+      </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Estilos CSS para el modal -->
+  <style>
+    .portfolio-modal-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.85);
+      z-index: 2000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+    
+    .portfolio-modal-container.active {
+      opacity: 1;
+      visibility: visible;
+    }
+    
+    .portfolio-modal {
+      background: #ffffff;
+      width: 90%;
+      max-width: 1000px;
+      max-height: 90vh;
+      border-radius: 15px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transform: translateY(30px);
+      transition: transform 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    }
+    
+    .dark-mode .portfolio-modal {
+      background: var(--secondary-color);
+      color: var(--text-light);
+    }
+    
+    .portfolio-modal-container.active .portfolio-modal {
+      transform: translateY(0);
+    }
+    
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 2rem;
+      background: var(--gradient);
+      color: white;
+    }
+    
+    .modal-close-btn {
+      background: none;
+      border: none;
+      color: white;
+      font-size: 2rem;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+    
+    .modal-close-btn:hover {
+      transform: rotate(90deg);
+    }
+    
+    .modal-body {
+      padding: 0;
+      overflow-y: auto;
+      max-height: calc(90vh - 180px);
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .modal-gallery {
+      width: 100%;
+    }
+    
+    .gallery-main {
+      width: 100%;
+      height: 450px;
+      overflow: hidden;
+      position: relative;
+      background: #f5f5f5;
+    }
+    
+    .dark-mode .gallery-main {
+      background: #222;
+    }
+    
+    .gallery-main img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    
+    .gallery-thumbnails {
+      display: flex;
+      gap: 10px;
+      padding: 15px;
+      background: rgba(0, 0, 0, 0.03);
+    }
+    
+    .dark-mode .gallery-thumbnails {
+      background: rgba(255, 255, 255, 0.05);
+    }
+    
+    .thumbnail {
+      width: 100px;
+      height: 70px;
+      object-fit: cover;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border: 2px solid transparent;
+    }
+    
+    .thumbnail:hover {
+      transform: translateY(-3px);
+    }
+    
+    .thumbnail.active {
+      border-color: var(--secondary-color);
+    }
+    
+    .modal-content {
+      padding: 2rem;
+    }
+    
+    .project-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin: 1rem 0 2rem;
+    }
+    
+    .meta-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: #666;
+    }
+    
+    .dark-mode .meta-item {
+      color: #ddd;
+    }
+    
+    .project-description {
+      margin-bottom: 2rem;
+      line-height: 1.7;
+    }
+    
+    .project-features {
+      margin-top: 1.5rem;
+    }
+    
+    .project-features h4 {
+      margin-bottom: 1rem;
+      color: var(--primary-color);
+    }
+    
+    .project-features ul {
+      padding-left: 1.5rem;
+    }
+    
+    .project-features li {
+      margin-bottom: 0.5rem;
+      position: relative;
+    }
+    
+    .modal-footer {
+      padding: 1.5rem 2rem;
+      display: flex;
+      justify-content: center;
+      border-top: 1px solid rgba(0, 0, 0, 0.1);
+    }
+    
+    .dark-mode .modal-footer {
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .modal-cta {
+      min-width: 200px;
+      text-align: center;
+    }
+    
+    /* Responsive adjustments */
+    @media (max-width: 900px) {
+      .modal-body {
+        flex-direction: column;
+      }
+      
+      .gallery-main {
+        height: 300px;
+      }
+      
+      .gallery-thumbnails {
+        justify-content: center;
+      }
+      
+      .thumbnail {
+        width: 80px;
+        height: 60px;
+      }
+      
+      .project-meta {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+    }
+  </style>
+  
+  <!-- JavaScript para la funcionalidad del modal -->
+  <script>
+ document.addEventListener('DOMContentLoaded', function() {
+  // Datos de ejemplo para proyectos (puedes reemplazar con tus datos reales)
+  const projectsData = {
+    'digitalizacion-empresarial': {
+      title: 'Digitalización Empresarial',
+      subtitle: 'Desarrollo web - Sector salud',
+      category: 'Digitalización',
+      client: 'Ultra clinica dental',
+      date: '2025',
+      description: 'Implementamos una solución de digitalización completa para una importante clínica, optimizando la gestión de pacientes, historiales médicos y procesos administrativos mediante una plataforma web intuitiva que mejoró la eficiencia operativa en un 45%.',
+      features: [
+        'Sistema de gestión de citas online integrado',
+        'Historiales médicos digitalizados con acceso seguro',
+        'Dashboard para análisis de métricas operativas',
+        'Integración con sistemas de facturación electrónica'
+      ],
+      images: [
+        'https://scontent.fsti4-1.fna.fbcdn.net/v/t1.15752-9/479737888_991578068967874_230887108581911416_n.png?_nc_cat=111&ccb=1-7&_nc_sid=0024fc&_nc_ohc=9h3_8qhqimYQ7kNvgFdRe6o&_nc_oc=AdhVKQMT7cVZJfJQDZ7zwpPOJm-gWvRI7QiKhrP6i5Y_GFrh6M5GEW9DzssVxUruXhE&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fsti4-1.fna&oh=03_Q7cD1gHw3A5Z9Dy35XlUlcqSeZHQImMLG24Mrk3GGoyjHX6LiQ&oe=67DDFD81',
+        'https://scontent.fsti4-2.fna.fbcdn.net/v/t1.15752-9/475768834_909775531231122_6078577652801037164_n.png?_nc_cat=105&ccb=1-7&_nc_sid=0024fc&_nc_ohc=j73deA8pihMQ7kNvgFVN_hj&_nc_oc=AdiXFnMbjN2fmCviTBHjElXz8CqmUsr_L2mB4xFisEOERLOKQ1GInWdPHPCZFzKhmcg&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fsti4-2.fna&oh=03_Q7cD1gHgtP7EbPWTyexD1CM73V8GIf8FIA3R5nwJ0MhlNS0w8Q&oe=67DE0196',
+        'https://scontent.fsti4-2.fna.fbcdn.net/v/t1.15752-9/480568741_1044741707412982_283530811582575835_n.png?_nc_cat=102&ccb=1-7&_nc_sid=0024fc&_nc_ohc=OqvZd-Vs2RwQ7kNvgEPWAhm&_nc_oc=AdjsMA9DlEsHmJ0FLYDYY4gKS7Exe-7ZO6rvfb3SyY_WaFHDJdLGf9EfwXc7xzp7AF4&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fsti4-2.fna&oh=03_Q7cD1gE55E-wMUj-mZD3rpuGvxFABh7ij20b7Kvk2YWP44TIwQ&oe=67DDE8F6'
+      ],
+      similarProductLink: 'https://clinica-dental01.web.app/' // Link añadido aquí
+    },
+    'transformacion-digital': {
+      title: 'Transformación Digital',
+      subtitle: 'Automatización de procesos para cadena de restaurante',
+      category: 'Digitalización',
+      client: 'restaurante gourmet',
+      date: '2025',
+      description: 'Desarrollamos un sistema de automatización integral para una cadena de restaurante que permitió optimizar la gestión de inventario, pedidos y logística. La implementación de esta sistema redujo los tiempos de procesamiento en un 60% y mejoró las ventas en linea al 98%.',
+      features: [
+        'Sistema automatizado para recervar mesas en tiempo real',
+        'Integración con plataforma de e-commerce para omnicanalidad',
+        'Sistema de compras gastronomiicas en línea con pago seguro',
+      ],
+      images: [
+        'https://scontent.fsti4-2.fna.fbcdn.net/v/t1.15752-9/478265202_1804853177034447_249973698979581056_n.png?_nc_cat=105&ccb=1-7&_nc_sid=0024fc&_nc_ohc=4thxc0aWlZEQ7kNvgFOdEux&_nc_oc=AdhQDbWTcvHt3u1GsAv0OxYQCOxcnU6GBlQZK-B4a0kaQyeyBYkIXpUZZSLleuF2tk8&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fsti4-2.fna&oh=03_Q7cD1gHYe9cOkAp30q52FO4QB5jpRiXxDN3lIwoCiydIfSQ4EA&oe=67E1880D',
+        'https://scontent.fsti4-1.fna.fbcdn.net/v/t1.15752-9/479380021_2585441061663906_710484672807515845_n.png?_nc_cat=109&ccb=1-7&_nc_sid=0024fc&_nc_ohc=TN_izW_6FSEQ7kNvgGQqsCi&_nc_oc=AdgnzJzW_BW5EnEmsbKuQru4NWiIKZJZvoETzRtZl0ktRzRdbAaP3PMqLIutLKCBDYM&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fsti4-1.fna&oh=03_Q7cD1gHNRzhEnmqCSxC9oAzvPoT4oOuwbqaBRScjvpiaglmdhQ&oe=67E1838C',
+        'https://scontent.fsti4-1.fna.fbcdn.net/v/t1.15752-9/479423376_2497233870482289_7255953713180058477_n.png?_nc_cat=108&ccb=1-7&_nc_sid=0024fc&_nc_ohc=o_6eIDbAm6kQ7kNvgFAhhRh&_nc_oc=Adh8YSvJMNC8k9C_K3yuI915gdTLWjxot0g9xtoc_u5mFo6kbaAaV05RLlncuEsbsjE&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fsti4-1.fna&oh=03_Q7cD1gFFB-Kzw53McripsN6GPBhDeYU72VkvJMoq1nO-OPZ2TA&oe=67E18D7E'
+      ],
+      similarProductLink: 'https://hubvix-8b0ea.web.app/' // Link añadido aquí
+    },
+    'plataforma-innovacion': {
+      title: 'Plataforma de Innovación',
+      subtitle: 'dealer',
+      category: 'Innovación',
+      client: 'chicago motors',
+      date: '2025',
+      description: 'Creamos un marketplace de automoviles especializado que conecta a vendedores y compradores de todas partes del mundo para una compra/venta exitosa. La plataforma facilita el networking estratégico, la visibilidad de automoviles disponibles para el acceso al financiamiento para emprendedores tecnológicos en republica dominicana.',
+      features: [
+        'vehiculos totalmente nuevos',
+        'financiamiento al mas bajo costo del pais',
+        'Seguros de automoviles disponibles con descuentos',
+        'Garantia de calidad para los vehiculos',
+      ],
+      images: [
+        'https://scontent.fsti4-1.fna.fbcdn.net/v/t1.15752-9/480940513_1920453902062450_7951088696095688981_n.png?_nc_cat=109&ccb=1-7&_nc_sid=0024fc&_nc_ohc=MN0c2Hvunm8Q7kNvgF-HaTa&_nc_oc=AdikX8foeDSIgRbKmXN0DWEh_ONL_PlS8zBcdUppkFNYLp1_owADhNoaQf8gpu6K1VM&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fsti4-1.fna&oh=03_Q7cD1gFf2fTPIHDt8o2x2RAI8TzFM1QH4pCtFv99csxz1JFpoA&oe=67E17593',
+        'https://scontent.fsti4-2.fna.fbcdn.net/v/t1.15752-9/480073662_927555899580789_1301874081901012094_n.png?_nc_cat=101&ccb=1-7&_nc_sid=0024fc&_nc_ohc=OoucvBRMPSIQ7kNvgGNE4O2&_nc_oc=Adh5whVznsnWH2sjhYvAuCuBpTZ4rWE5HHVWEv5FiyJJlLQpkGb--XVlvUSq9HPf8a4&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fsti4-2.fna&oh=03_Q7cD1gGhD8oF-rSvBUEjEkiGQetoAfI0KYIMz-cZmHEk2Mo6Fw&oe=67E16186',
+        'https://scontent.fsti4-1.fna.fbcdn.net/v/t1.15752-9/480054186_1027611749412093_4717539874143873127_n.png?_nc_cat=100&ccb=1-7&_nc_sid=0024fc&_nc_ohc=p44MRs5pJOkQ7kNvgFGe6Nf&_nc_oc=Adg1HcZHtTR7za_scHf-YKw9smCGzXxrn2l2Gy4NwtADJgq8eJjRGdsAwO1hR7qybI0&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fsti4-1.fna&oh=03_Q7cD1gE3q69K12uaF3izHnF9jup07OqRXsZ_Ha0lNtXQ2X1Elw&oe=67E18DF6'
+      ],
+      similarProductLink: 'https://pro-innova-rd.firebaseapp.com/' // Link añadido aquí
+    }
+  };
+
+  // Función para abrir el modal
+  function openModal(projectId) {
+    let project;
+    
+    if (projectId.includes('Digitalizacion')) {
+  project = projectsData['digitalizacion-empresarial'];
+} else if (projectId.includes('Gestion')) {
+  project = projectsData['transformacion-digital'];
+} else if (projectId.includes('Plataforma')) {
+  project = projectsData['plataforma-innovacion'];
+}
+    
+    // Actualizar el contenido del modal
+    document.getElementById('modal-title').textContent = project.title;
+    document.getElementById('modal-subtitle').textContent = project.subtitle;
+    document.getElementById('project-category').textContent = project.category;
+    document.getElementById('project-client').textContent = project.client;
+    document.getElementById('project-date').textContent = project.date;
+    document.getElementById('modal-description').textContent = project.description;
+    
+    // Actualizar el enlace del botón CTA
+    const ctaButton = document.querySelector('.modal-cta');
+    ctaButton.href = project.similarProductLink;
+    
+    // Actualizar las imágenes
+    document.getElementById('main-image').src = project.images[0];
+    
+    const thumbnails = document.querySelectorAll('.thumbnail');
+    thumbnails.forEach((thumb, index) => {
+      if (project.images[index]) {
+        thumb.src = project.images[index];
+        thumb.dataset.src = project.images[index];
+        thumb.style.display = 'block';
+        if (index === 0) {
+          thumb.classList.add('active');
+        } else {
+          thumb.classList.remove('active');
+        }
+      } else {
+        thumb.style.display = 'none';
+      }
+    });
+    
+    // Actualizar características
+    const featuresList = document.getElementById('project-features');
+    featuresList.innerHTML = '';
+    project.features.forEach(feature => {
+      const li = document.createElement('li');
+      li.textContent = feature;
+      featuresList.appendChild(li);
+    });
+    
+    modalContainer.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  // Resto del código existente para manejar eventos...
+  const detailButtons = document.querySelectorAll('.portfolio-item .cta-button');
+  const modalContainer = document.querySelector('.portfolio-modal-container');
+  const closeModalBtn = document.querySelector('.modal-close-btn');
+
+  detailButtons.forEach(button => {
+    button.addEventListener('click', function(e) {
+      e.preventDefault();
+      const portfolioItem = this.closest('.portfolio-item');
+      const projectTitle = portfolioItem.querySelector('h3').textContent;
+      openModal(projectTitle);
+    });
+  });
+
+  function closeModal() {
+    modalContainer.classList.remove('active');
+    document.body.style.overflow = 'auto';
+  }
+
+  closeModalBtn.addEventListener('click', closeModal);
+
+  modalContainer.addEventListener('click', function(e) {
+    if (e.target === modalContainer) {
+      closeModal();
+    }
+  });
+
+  document.addEventListener('click', function(e) {
+    if (e.target.classList.contains('thumbnail')) {
+      document.getElementById('main-image').src = e.target.dataset.src;
+      document.querySelectorAll('.thumbnail').forEach(thumb => {
+        thumb.classList.remove('active');
+      });
+      e.target.classList.add('active');
+    }
+  });
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && modalContainer.classList.contains('active')) {
+      closeModal();
+    }
+  });
+});
+  </script>
+  
+    <!-- 4. Sección de Clientes/Colaboradores -->
+    <section class="clients">
+      <div class="section-title" data-aos="fade-up">
+        <h2>Empresas que confían en nosotros</h2>
+        <p>Colaboramos con las mejores marcas para impulsar su crecimiento</p>
+      </div>
+      <div class="clients-slider" data-aos="fade-up">
+        <div class="client-logo"><img src="/api/placeholder/200/100" alt="Cliente 1"></div>
+        <div class="client-logo"><img src="/api/placeholder/200/100" alt="Cliente 2"></div>
+        <div class="client-logo"><img src="/api/placeholder/200/100" alt="Cliente 3"></div>
+        <div class="client-logo"><img src="/api/placeholder/200/100" alt="Cliente 4"></div>
+        <div class="client-logo"><img src="/api/placeholder/200/100" alt="Cliente 5"></div>
+        <div class="client-logo"><img src="/api/placeholder/200/100" alt="Cliente 6"></div>
+      </div>
+    </section>
+    <div class="modal-container" id="modal-container">
+      <div class="modal">
+        <div class="modal-header">
+          <h3 id="modal-title-gestion-de-proyectos">Gestión empresarial</h3>
+          <button class="close-modal">&times;</button>
+        </div>
+        <div class="modal-content">
+          <p id="modal-description-gestion-de-proyectos">Detalles del servicio.</p>
+          <ul id="modal-features">
+            <!-- Los puntos destacados se insertarán aquí dinámicamente -->
+          </ul>
+        </div>
+      </div>
+    </div>  
+    <footer>
+      <div class="footer-content">
+          <div class="footer-section">
+              <h3>Dominican Hubvix</h3>
+              <p>Estamos transformando el futuro digital de las empresas con soluciones innovadoras y personalizadas.</p>
+              <div class="social-links">
+                  <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                  <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                  <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                  <a href="https://www.instagram.com/hubvix?igsh=bG4wd2pzYjdicW52&utm_source=qr" class="social-link"><i class="fab fa-instagram"></i></a>
+              </div>
+          </div>
+          <div class="footer-section">
+              <h3>Enlaces Rápidos</h3>
+              <ul class="footer-links">
+                  <li><a href="#inicio">Inicio</a></li>
+                  <li><a href="#openEvaluation">Servicios</a></li>
+                  <li><a href="#sobre-nosotros">Sobre Nosotros</a></li>
+                  <li><a href="#portafolio">Portafolio</a></li>
+              </ul>
+          </div>
+          <div class="footer-section">
+              <h3>Newsletter</h3>
+              <p>Suscríbete para recibir las últimas noticias y actualizaciones.</p>
+              <div class="newsletter">
+                  <input type="email" placeholder="Tu email">
+                  <button>Suscribirse</button>
+              </div>
+          </div>
+      </div>
+      <div class="footer-bottom">
+          <p>&copy; 2025 Hubvix. Todos los derechos reservados.</p>
+      </div>
+  </footer>
+  <div class="chatbot01">
+    <i class="fas fa-forms"></i>
+    <a href="#" class="cta-button" id="chatbot01">📑</a>
+</div>
+<script>
+    // Portfolio filtering
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const portfolioItems = document.querySelectorAll('.portfolio-item');
+    
+    filterButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        // Remove active class from all buttons
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        
+        // Add active class to clicked button
+        button.classList.add('active');
+        
+        // Get the filter value
+        const filterValue = button.getAttribute('data-filter');
+        
+        // Filter portfolio items
+        portfolioItems.forEach(item => {
+          if (filterValue === 'todos' || item.getAttribute('data-category') === filterValue) {
+            item.style.display = 'block';
+          } else {
+            item.style.display = 'none';
+          }
+        });
+      });
+    });
+    // FAQ functionality
+    const faqItems = document.querySelectorAll('.faq-item');
+    
+    faqItems.forEach(item => {
+      const question = item.querySelector('.faq-question');
+      
+      question.addEventListener('click', () => {
+        // Close all other items
+        faqItems.forEach(otherItem => {
+          if (otherItem !== item) {
+            otherItem.classList.remove('active');
+          }
+        });
+        
+        // Toggle current item
+        item.classList.toggle('active');
+      });
+    });
+    
+    // Simple clients slider (could be enhanced with a proper carousel)
+    const clientLogos = document.querySelectorAll('.client-logo');
+    
+    function rotateClients() {
+      const slider = document.querySelector('.clients-slider');
+      const firstLogo = slider.firstElementChild;
+      
+      slider.appendChild(firstLogo.cloneNode(true));
+      slider.removeChild(firstLogo);
+    }
+    
+    // Rotate every 3 seconds
+    //setInterval(rotateClients, 3000);
+    
+  </script>
+  <script>
+    // Datos de los servicios desde el documento edit.txt
+    const serviciosData = {
+      "Gestión de Proyectos": {
+        descripcion: "Desde la planificación hasta la ejecución y optimización, en Dominican HubVix te acompañamos en todas las fases de tu proyecto. Implementando metodologías ágiles y estrategias personalizadas para garantizar eficiencia, productividad y resultados tangibles.",
+        caracteristicas: [
+          "Planificación estratégica y operativa",
+          "Optimización de recursos y procesos",
+          "Monitoreo y evaluación de resultados",
+          "Gestión de riesgos y toma de decisiones basada en datos"
+        ]
+      },
+      "Digitalización de Empresas": {
+        descripcion: "Transformamos tu negocio con soluciones digitales innovadoras,tomando en cuenta desde el diseño hasta el desarrollo de sistemas tecnológicos y avanzados que impulsan tu crecimiento empresarial hacia el exito.",
+        caracteristicas: [
+          "Creación y optimización de plataformas digitales",
+          "Automatización de procesos empresariales",
+          "Integración de analítica de datos",
+          "Optimización de experiencia del cliente"
+        ]
+      },
+      "Innovación y Desarrollo": {
+        descripcion: "Fomentamos la incubación de startups y la generación de estrategias disruptivas para negocios que buscan diferenciarse y escalar en el mercado.",
+        caracteristicas: [
+          "Creación de modelos de negocio innovadores",
+          "Desarrollo de productos y servicios tecnológicos",
+          "Implementación de metodologías de innovación (Lean Startup, Design Thinking, etc.)",
+          "Optimización de procesos con tecnologías emergentes"
+        ]
+      },
+      "Impulso Empresarial": {
+        descripcion: "Brindamos mentorías, networking y financiamiento estratégico para nuevos empresarios y empresas en crecimiento. Te conectamos con oportunidades clave para expandir tu negocio y potenciar su éxito.",
+        caracteristicas: [
+          "Asesoramiento empresarial personalizado",
+          "Conexión con inversores y oportunidades de financiamiento",
+          "Estrategias de crecimiento y posicionamiento de marca",
+          "Acceso a redes de networking y ecosistemas emprendedores"
+        ]
+      }
+    };
+  
+    // Obtener referencias a elementos
+    const serviceCards = document.querySelectorAll('.service-card');
+    const modalContainer = document.getElementById('modal-container');
+    const modalTitle = document.getElementById('modal-title-gestion-de-proyectos');
+    const modalDescription = document.getElementById('modal-description-gestion-de-proyectos');
+    const modalFeatures = document.getElementById('modal-features');
+    const closeModalBtn = document.querySelector('.close-modal');
+  
+    // Función para abrir el modal con la información correcta
+    function openModal(servicioTitulo) {
+      const servicio = serviciosData[servicioTitulo];
+      
+      if (servicio) {
+        // Establecer el título
+        modalTitle.textContent = servicioTitulo;
+        
+        // Establecer la descripción
+        modalDescription.textContent = servicio.descripcion;
+        
+        // Limpiar y agregar las características
+        modalFeatures.innerHTML = '';
+        servicio.caracteristicas.forEach(caracteristica => {
+          const li = document.createElement('li');
+          li.textContent = caracteristica;
+          modalFeatures.appendChild(li);
+        });
+        
+        // Mostrar el modal
+        modalContainer.classList.add('active');
+        
+        // Deshabilitar el scroll del body
+        document.body.style.overflow = 'hidden';
+      }
+    }
+  
+    // Función para cerrar el modal
+    function closeModal() {
+      modalContainer.classList.remove('active');
+      
+      // Habilitar el scroll del body
+      document.body.style.overflow = 'auto';
+    }
+  
+    // Agregar event listeners a las tarjetas de servicio
+    serviceCards.forEach(card => {
+      card.addEventListener('click', () => {
+        // Extraer el título del servicio del H3
+        const servicioTitulo = card.querySelector('h3').textContent;
+        openModal(servicioTitulo);
+      });
+    });
+  
+    // Event listener para cerrar el modal
+    closeModalBtn.addEventListener('click', closeModal);
+    
+    // Cerrar el modal al hacer clic fuera de él
+    modalContainer.addEventListener('click', (e) => {
+      if (e.target === modalContainer) {
+        closeModal();
+      }
+    });
+    
+    // Cerrar el modal con la tecla ESC
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modalContainer.classList.contains('active')) {
+        closeModal();
+      }
+    });
+  </script>
+<body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+
+        // Preloader
+        window.addEventListener('load', () => {
+            const preloader = document.querySelector('.preloader');
+            preloader.classList.add('fade-out');
+            setTimeout(() => {
+                preloader.style.display = 'none';
+            }, 500);
+        });
+
+        // Scroll Progress
+        window.addEventListener('scroll', () => {
+            const scrollProgress = document.querySelector('.scroll-progress-bar');
+            const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+            const scrolled = window.scrollY;
+            const progress = (scrolled / scrollable) * 100;
+            scrollProgress.style.width = `${progress}%`;
+        });
+
+        // Mobile Menu
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Stats Counter
+        const statsSection = document.querySelector('.stats');
+        const statNumbers = document.querySelectorAll('.stat-number');
+        let animated = false;
+
+        function animateStats() {
+            if (animated) return;
+            
+            statNumbers.forEach(stat => {
+                const target = parseInt(stat.getAttribute('data-count'));
+                let current = 0;
+                const increment = target / 50;
+                const timer = setInterval(() => {
+                    current += increment;
+                    stat.textContent = Math.floor(current);
+                    if (current >= target) {
+                        stat.textContent = target;
+                        clearInterval(timer);
+                    }
+                }, 30);
+            });
+            animated = true;
+        }
+
+        // Initialize particles.js
+        particlesJS('particles-js', {
+            particles: {
+                number: {
+                    value: 80,
+                    density: {
+                        enable: true,
+                        value_area: 800
+                    }
+                },
+                color: {
+                    value: '#ffffff'
+                },
+                shape: {
+                    type: 'circle'
+                },
+                opacity: {
+                    value: 0.5,
+                    random: false
+                },
+                size: {
+                    value: 3,
+                    random: true
+                },
+                line_linked: {
+                    enable: true,
+                    distance: 150,
+                    color: '#ffffff',
+                    opacity: 0.4,
+                    width: 1
+                },
+                move: {
+                    enable: true,
+                    speed: 6,
+                    direction: 'none',
+                    random: false,
+                    straight: false,
+                    out_mode: 'out',
+                    bounce: false
+                }
+            },
+            interactivity: {
+                detect_on: 'canvas',
+                events: {
+                    onhover: {
+                        enable: true,
+                        mode: 'repulse'
+                    },
+                    onclick: {
+                        enable: true,
+                        mode: 'push'
+                    },
+                    resize: true
+                }
+            },
+            retina_detect: true
+        });
+
+        // Intersection Observer for Stats Animation
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateStats();
+                }
+            });
+        });
+
+        observer.observe(statsSection);
+        
+    </script>
+</body>
+</html>
+<!-- Añadimos el CSS -->
+<style>
+    .form-modal-container {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 1000;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .form-modal-container.active {
+        display: flex;
+    }
+    
+    .form-modal {
+        background-color: white;
+        padding: 2rem;
+        border-radius: 8px;
+        width: 90%;
+        max-width: 600px;
+        max-height: 90vh;
+        overflow-y: auto;
+        position: relative;
+    }
+    
+    .form-modal h2 {
+        color: #333;
+        margin-bottom: 1.5rem;
+        text-align: center;
+    }
+    
+    .form-modal .close-form-modal {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        font-size: 1.5rem;
+        cursor: pointer;
+        background: none;
+        border: none;
+        color: #333;
+    }
+    
+    .form-group {
+        margin-bottom: 1rem;
+    }
+    
+    .form-group label {
+        display: block;
+        margin-bottom: 0.5rem;
+        color: #333;
+    }
+    
+    .form-group input,
+    .form-group textarea {
+        width: 100%;
+        padding: 0.5rem;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 1rem;
+    }
+    
+    .social-inputs {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+    
+    .submit-btn {
+        width: 100%;
+        padding: 0.75rem;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        font-size: 1rem;
+        cursor: pointer;
+        margin-top: 1rem;
+    }
+    
+    .submit-btn:hover {
+        background-color: #0056b3;
+    }
+    </style>
+    
+    <!-- Añadimos el HTML del modal del formulario -->
+   
+    
+    <!-- Añadimos el JavaScript -->
+    <!-- Primero añadimos el script de EmailJS -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<style>
+    .form-modal-container {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 1000;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .form-modal-container.active {
+        display: flex;
+    }
+    
+    .form-modal {
+        background-color: white;
+        padding: 2rem;
+        border-radius: 8px;
+        width: 90%;
+        max-width: 600px;
+        max-height: 90vh;
+        overflow-y: auto;
+        position: relative;
+    }
+    
+    .form-modal h2 {
+        color: #333;
+        margin-bottom: 1.5rem;
+        text-align: center;
+    }
+    
+    .form-modal .close-form-modal {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        font-size: 1.5rem;
+        cursor: pointer;
+        background: none;
+        border: none;
+        color: #333;
+    }
+    
+    .form-group {
+        margin-bottom: 1rem;
+    }
+    
+    .form-group label {
+        display: block;
+        margin-bottom: 0.5rem;
+        color: #333;
+    }
+    
+    .form-group input,
+    .form-group textarea {
+        width: 100%;
+        padding: 0.5rem;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 1rem;
+    }
+    
+    .social-inputs {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+    
+    .submit-btn {
+        width: 100%;
+        padding: 0.75rem;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        font-size: 1rem;
+        cursor: pointer;
+        margin-top: 1rem;
+    }
+    
+    .submit-btn:hover {
+        background-color: #0056b3;
+    }
+
+    /* Añadimos estilos para las alertas */
+    .alert {
+        padding: 1rem;
+        margin: 1rem 0;
+        border-radius: 4px;
+        text-align: center;
+    }
+
+    .alert-success {
+        background-color: #d4edda;
+        color: #155724;
+        border: 1px solid #c3e6cb;
+    }
+
+    .alert-error {
+        background-color: #f8d7da;
+        color: #721c24;
+        border: 1px solid #f5c6cb;
+    }
+    
+</style>
+<div class="form-modal-container" id="form-modal-container">
+    <div class="form-modal">
+        <button class="close-form-modal">&times;</button>
+        <h2>Digitaliza tu empresa con nosotros</h2>
+        <form id="empresa-form">
+
+            <div class="form-group">
+                <label for="empresa">Nombre de la empresa:</label>
+                <input type="text" id="empresa" name="empresa" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="sector">Sector o industria:</label>
+                <input type="text" id="sector" name="sector" required>
+            </div>
+
+            <div class="form-group">
+                <label for="ubicacion">Ubicación de la empresa:</label>
+                <textarea id="ubicacion" name="ubicacion" required></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label for="telefono">Número de teléfono de contacto:</label>
+                <input type="tel" id="telefono" name="telefono" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Correo electrónico de contacto:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="web">Página web actual (si aplica):</label>
+                <input type="url" id="web" name="web">
+            </div>
+            
+            <div class="form-group">
+                <label>Redes sociales de la empresa:</label>
+                <div class="social-inputs">
+                    <input type="text" id="facebook" name="facebook" placeholder="Facebook">
+                    <input type="text" id="instagram" name="instagram" placeholder="Instagram">
+                    <input type="text" id="twitter" name="twitter" placeholder="Twitter">
+                    <input type="text" id="linkedin" name="linkedin" placeholder="LinkedIn">
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="pregunta01">¿Cuál es el objetivo principal de la página web? Ejemplo: Vender productos, mostrar servicios, captar clientes, blog corporativo,
+                    etc</label>
+                <input type="text" id="pregunta01" name="pregunta01" required>
+            </div>
+
+            <div class="form-group">
+                <label for="pregunta02">¿Cuáles son las principales funcionalidades que necesita su página web? Ejemplo: Tienda en línea, formulario de contacto, chat en vivo, calendario de citas e integración con CRM.</label>
+                <input type="text" id="pregunta02" name="pregunta02" required>
+            </div>
+
+            <div class="form-group">
+                <label for="pregunta03">¿Quiénes son sus principales competidores en línea?</label>
+                <input type="text" id="pregunta03" name="pregunta03" required>
+            </div>
+
+            <div class="form-group">
+                <label for="pregunta04">¿Hay algún sitio web de referencia que le guste o que quiera emular en cuanto a diseño y funcionalidad?</label>
+                <input type="text" id="pregunta04" name="pregunta04" required>
+            </div>
+
+            <div class="form-group">
+                <label for="pregunta05">¿Tiene algún estilo visual específico en mente para su sitio web? Ejemplo: Moderno, minimalista, corporativo, colorido,
+                    etc</label>
+                <input type="text" id="pregunta05" name="pregunta05" required>
+            </div>
+
+            <div class="form-group">
+                <label for="pregunta06">¿Qué colores y/o paleta de colores prefiere para su sitio web?</label>
+                <input type="text" id="pregunta06" name="pregunta06" required>
+            </div>
+
+            <div class="form-group">
+                <label for="pregunta07">¿Quiere incluir su logotipo en el sitio web?</label>
+                <input type="text" id="pregunta07" name="pregunta07" required>
+            </div>
+
+            <div class="form-group">
+                <label for="pregunta08">¿Qué imágenes o recursos visuales (fotografías, videos, etc.) desea incluir en la web? Contenido y Estructura del Sitio web.</label>
+                <input type="text" id="pregunta08" name="pregunta08" required>
+            </div>
+
+            <div class="form-group">
+                <label for="pregunta09">¿Cuántas páginas principales tendrá su sitio web? Ejemplo: Inicio, Servicios, Sobre nosotros, Contacto, Blog,
+                    etc.</label>
+                <input type="text" id="pregunta09" name="pregunta09" required>
+            </div>
+
+            <div class="form-group">
+                <label for="pregunta10">¿Desea incluir un blog o una sección de noticias?</label>
+                <input type="text" id="pregunta10" name="pregunta10" required>
+            </div>
+
+            <div class="form-group">
+                <label for="pregunta11">¿Cuáles secciones principales quiere incluir en la página de inicio? Ejemplo: Imagen destacada, presentación de servicios, testimonios, CTA (Call to Action), etc.</label>
+                <input type="text" id="pregunta11" name="pregunta11" required>
+            </div>
+
+            <div class="form-group">
+                <label for="pregunta12">¿Necesitará una tienda en línea (e-commerce)? de ser a si ¿Qué métodos de pago desea ofrecer?</label>
+                <input type="text" id="pregunta12" name="pregunta12" required>
+            </div>
+
+            <div class="form-group">
+                <label for="pregunta13">¿Necesita que el sitio esté optimizado para SEO (Search Engine Optimization)?</label>
+                <input type="text" id="pregunta13" name="pregunta13" required>
+            </div>
+
+            <div class="form-group">
+                <label for="pregunta14">¿Qué tipo de alojamiento web prefiere?</label>
+                <input type="text" id="pregunta14" name="pregunta14" required>
+            </div>
+
+            <div class="form-group">
+                <label for="pregunta15">Servidor dedicado / Alojamiento compartido / No lo sé / Mantenimiento y Actualización.</label>
+                <input type="text" id="pregunta15" name="pregunta15" required>
+            </div>
+
+            <div class="form-group">
+                <label for="pregunta16">¿Desea que gestionemos el mantenimiento continuo de la web?</label>
+                <input type="text" id="pregunta16" name="pregunta16" required>
+            </div>
+
+            <div class="form-group">
+                <label for="pregunta17">¿Desea realizar actualizaciones frecuentes de contenido?</label>
+                <input type="text" id="pregunta17" name="pregunta17" required>
+            </div>
+
+            <div class="form-group">
+                <label for="pregunta18">¿Hay algún detalle o solicitud adicional que desee mencionar?</label>
+                <input type="text" id="pregunta18" name="pregunta18" required>
+            </div>
+
+            <div class="form-group">
+                <label for="pregunta19">Por favor, adjunte cualquier archivo relevante para el desarrollo de su sitio web (logotipos,
+                    imágenes, documentos de contenido, etc.):</label>
+                <input type="text" id="pregunta19" name="pregunta19" required>
+            </div>
+
+            <div class="form-group">
+                <label for="pregunta20">¿Tiene a alguien a quien pueda referirnos?</label>
+                <input type="text" id="pregunta20" name="pregunta20" required>
+            </div>
+
+            <div class="form-group">
+                <label for="pregunta21">¿Tiene a alguien a quien pueda referirnos? En caso de que si</label>
+                <input type="text" id="pregunta21" name="pregunta21" required>
+            </div>
+
+            <div class="form-group">
+                <label for="pregunta22">Nombre</label>
+                <input type="text" id="pregunta22" name="pregunta22" required>
+            </div>
+
+            <div class="form-group">
+                <label for="pregunta23">Numero de telefono</label>
+                <input type="text" id="pregunta23" name="pregunta23" required>
+            </div>
+
+            <div class="form-group">
+                <label for="pregunta24">Nombre de la empresa</label>
+                <input type="text" id="pregunta24" name="pregunta24" required>
+            </div>
+
+            <button type="submit" class="submit-btn">Enviar</button>
+        </form>
+    </div>
+</div>
+
+<script>
+// Inicializamos EmailJS
+emailjs.init("-wQhkbNrffDVsjkvy"); // Reemplaza con tu public key de EmailJS
+
+// Obtener referencias a los elementos
+const chatbot01Btn = document.getElementById('chatbot01');
+const formModalContainer = document.getElementById('form-modal-container');
+const closeFormModalBtn = document.querySelector('.close-form-modal');
+const empresaForm = document.getElementById('empresa-form');
+const alertContainer = document.getElementById('alert-container');
+const pregunta01 = document.getElementById('pregunta01');
+const pregunta02 = document.getElementById('pregunta02');
+const pregunta03 = document.getElementById('pregunta03');
+const pregunta04 = document.getElementById('pregunta04');
+const pregunta05 = document.getElementById('pregunta05');
+const pregunta06 = document.getElementById('pregunta06');
+const pregunta07 = document.getElementById('pregunta07');
+const pregunta08 = document.getElementById('pregunta08');
+const pregunta09 = document.getElementById('pregunta09');
+const pregunta10 = document.getElementById('pregunta10');
+const pregunta11 = document.getElementById('pregunta11');
+const pregunta12 = document.getElementById('pregunta12');
+const pregunta13 = document.getElementById('pregunta13');
+const pregunta14 = document.getElementById('pregunta14');
+const pregunta15 = document.getElementById('pregunta15');
+const pregunta16 = document.getElementById('pregunta16');
+const pregunta17 = document.getElementById('pregunta17');
+const pregunta18 = document.getElementById('pregunta18');
+const pregunta19 = document.getElementById('pregunta19');
+const pregunta20 = document.getElementById('pregunta20');
+const pregunta21 = document.getElementById('pregunta21');
+const pregunta22 = document.getElementById('pregunta22');
+const pregunta23 = document.getElementById('pregunta23');
+const pregunta24 = document.getElementById('pregunta24');
+// Función para mostrar alertas
+function showAlert(message, type) {
+    const alert = document.createElement('div');
+    alert.className = `alert alert-${type}`;
+    alert.textContent = message;
+    alertContainer.innerHTML = '';
+    alertContainer.appendChild(alert);
+    
+    // Remover la alerta después de 5 segundos
+    setTimeout(() => {
+        alert.remove();
+    }, 5000);
+}
+
+// Función para abrir el modal del formulario
+function openFormModal() {
+    formModalContainer.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+// Función para cerrar el modal del formulario
+function closeFormModal() {
+    formModalContainer.classList.remove('active');
+    document.body.style.overflow = 'auto';
+    empresaForm.reset();
+    alertContainer.innerHTML = '';
+}
+
+// Event listeners
+chatbot01Btn.addEventListener('click', (e) => {
+    e.preventDefault();
+    openFormModal();
+});
+
+closeFormModalBtn.addEventListener('click', closeFormModal);
+
+formModalContainer.addEventListener('click', (e) => {
+    if (e.target === formModalContainer) {
+        closeFormModal();
+    }
+});
+
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && formModalContainer.classList.contains('active')) {
+        closeFormModal();
+    }
+});
+
+empresaForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    
+    // Obtenemos todos los valores del formulario
+    const formData = {
+        empresa: document.getElementById('empresa').value,
+        sector: document.getElementById('sector').value,
+        ubicacion: document.getElementById('ubicacion').value,
+        telefono: document.getElementById('telefono').value,
+        email: document.getElementById('email').value,
+        web: document.getElementById('web').value,
+        facebook: document.getElementById('facebook').value,
+        instagram: document.getElementById('instagram').value,
+        twitter: document.getElementById('twitter').value,
+        linkedin: document.getElementById('linkedin').value,
+        pregunta01: document.getElementById('pregunta01').value,
+        pregunta02: document.getElementById('pregunta02').value,
+        pregunta03: document.getElementById('pregunta03').value,
+        pregunta04: document.getElementById('pregunta04').value,
+        pregunta05: document.getElementById('pregunta05').value,
+        pregunta06: document.getElementById('pregunta06').value,
+        pregunta07: document.getElementById('pregunta07').value,
+        pregunta08: document.getElementById('pregunta08').value,
+        pregunta09: document.getElementById('pregunta09').value,
+        pregunta10: document.getElementById('pregunta10').value,
+        pregunta11: document.getElementById('pregunta11').value,
+        pregunta12: document.getElementById('pregunta12').value,
+        pregunta13: document.getElementById('pregunta13').value,
+        pregunta14: document.getElementById('pregunta14').value,
+        pregunta15: document.getElementById('pregunta15').value,
+        pregunta16: document.getElementById('pregunta16').value,
+        pregunta17: document.getElementById('pregunta17').value,
+        pregunta18: document.getElementById('pregunta18').value,
+        pregunta19: document.getElementById('pregunta19').value,
+        pregunta20: document.getElementById('pregunta20').value,
+        pregunta21: document.getElementById('pregunta21').value,
+        pregunta22: document.getElementById('pregunta22').value,
+        pregunta23: document.getElementById('pregunta23').value,
+        pregunta24: document.getElementById('pregunta24').value,
+    };
+
+    try {
+        // Enviamos el email usando EmailJS
+        await emailjs.send(
+            "service_vstac3d", // Reemplaza con tu Service ID de EmailJS
+            "template_r2z381u", // Reemplaza con tu Template ID de EmailJS
+            {
+                to_email: "sp9979182@gmail.com",
+                from_name: formData.empresa,
+                from_email: formData.email,
+                message: `
+                    Empresa: ${formData.empresa}
+                    Sector: ${formData.sector}
+                    Ubicación: ${formData.ubicacion}
+                    Teléfono: ${formData.telefono}
+                    Email: ${formData.email}
+                    Web: ${formData.web}
+                    Facebook: ${formData.facebook}
+                    Instagram: ${formData.instagram}
+                    Twitter: ${formData.twitter}
+                    LinkedIn: ${formData.linkedin}
+                    Pregunta 01: ${formData.pregunta01}
+                    Pregunta 02: ${formData.pregunta02}
+                    Pregunta 03: ${formData.pregunta03}
+                    Pregunta 04: ${formData.pregunta04}
+                    Pregunta 05: ${formData.pregunta05}
+                    Pregunta 06: ${formData.pregunta06}
+                    Pregunta 07: ${formData.pregunta07}
+                    Pregunta 08: ${formData.pregunta08}
+                    Pregunta 09: ${formData.pregunta09}
+                    Pregunta 10: ${formData.pregunta10}
+                    Pregunta 11: ${formData.pregunta11}
+                    Pregunta 12: ${formData.pregunta12}
+                    Pregunta 13: ${formData.pregunta13}
+                    Pregunta 14: ${formData.pregunta14}
+                    Pregunta 15: ${formData.pregunta15}
+                    Pregunta 16: ${formData.pregunta16}
+                    Pregunta 17: ${formData.pregunta17}
+                    Pregunta 18: ${formData.pregunta18}
+                    Pregunta 19: ${formData.pregunta19}
+                    Pregunta 20: ${formData.pregunta20}
+                    Pregunta 21: ${formData.pregunta21}
+                    Pregunta 22: ${formData.pregunta22}
+                    Pregunta 23: ${formData.pregunta23}
+                    Pregunta 24: ${formData.pregunta24}
+                    
+                `
+            }
+        );
+
+        showAlert('¡Formulario enviado con éxito!', 'success');
+        setTimeout(closeFormModal, 2000);
+    } catch (error) {
+        console.error('Error al enviar el formulario:', error);
+        showAlert('Error al enviar el formulario. Por favor, intente nuevamente.', 'error');
+    }
+});
+
+</script>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario Modal</title>
+    <style>
+    /* Estilos base */
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Contenedor del modal */
+    .form-modal-container {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 1000;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .form-modal-container.active {
+        display: flex;
+    }
+    
+    /* Modal */
+    .form-modal {
+        background-color: white;
+        padding: 2rem;
+        border-radius: 8px;
+        width: 90%;
+        max-width: 600px;
+        max-height: 90vh;
+        overflow-y: auto;
+        position: relative;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    /* Encabezados y botones */
+    .form-modal h2 {
+        color: #333;
+        margin-bottom: 1.5rem;
+        text-align: center;
+        font-size: 1.5rem;
+    }
+    
+    .close-form-modal {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        font-size: 1.5rem;
+        cursor: pointer;
+        background: none;
+        border: none;
+        color: #333;
+        transition: color 0.3s ease;
+    }
+    
+    .close-form-modal:hover {
+        color: #007bff;
+    }
+    
+    /* Grupos de formulario */
+    .form-group {
+        margin-bottom: 1.5rem;
+    }
+    
+    .form-group label {
+        display: block;
+        margin-bottom: 0.5rem;
+        color: #333;
+        font-weight: 500;
+    }
+    
+    .form-group input,
+    .form-group textarea {
+        width: 100%;
+        padding: 0.75rem;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 1rem;
+        transition: border-color 0.3s ease;
+    }
+    
+    .form-group input:focus,
+    .form-group textarea:focus {
+        outline: none;
+        border-color: #007bff;
+    }
+    
+    /* Entradas sociales */
+    .social-inputs {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+    
+    /* Botón de envío */
+    .submit-btn {
+        width: 100%;
+        padding: 0.75rem;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        font-size: 1rem;
+        cursor: pointer;
+        margin-top: 1rem;
+        transition: background-color 0.3s ease;
+    }
+    
+    .submit-btn:hover {
+        background-color: #0056b3;
+    }
+
+    /* Alertas */
+    .alert {
+        padding: 1rem;
+        margin: 1rem 0;
+        border-radius: 4px;
+        text-align: center;
+        animation: fadeIn 0.3s ease;
+    }
+
+    .alert-success {
+        background-color: #d4edda;
+        color: #155724;
+        border: 1px solid #c3e6cb;
+    }
+
+    .alert-error {
+        background-color: #f8d7da;
+        color: #721c24;
+        border: 1px solid #f5c6cb;
+    }
+
+    /* Mensaje de agradecimiento */
+    #thank-you-message {
+        display: none;
+    }
+
+    #thank-you-message.active {
+        display: flex;
+    }
+
+    #thank-you-message .form-modal {
+        text-align: center;
+    }
+
+    #thank-you-message p {
+        margin: 1rem 0;
+        color: #333;
+        font-size: 1.1rem;
+    }
+
+    #thank-you-message em {
+        color: #007bff;
+        font-style: italic;
+    }
+
+    /* Animaciones */
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+        .social-inputs {
+            grid-template-columns: 1fr;
+        }
+        
+        .form-modal {
+            padding: 1.5rem;
+            width: 95%;
+        }
+    }
+    </style>
+</head>
+<body>
+    <!-- Contenedor de alertas -->
+    <div id="alert-container"></div>
+
+    <!-- Modal del formulario -->
+    <div class="form-modal-container" id="form-modal-container">
+        <div class="form-modal">
+            <button class="close-form-modal">&times;</button>
+            <h2>Digitaliza tu empresa con nosotros</h2>
+            <form id="empresa-form">
+                <!-- El contenido del formulario permanece igual -->
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal de agradecimiento -->
+    <div id="thank-you-message" class="form-modal-container">
+        <div class="form-modal">
+            <h2>¡Hey! Gracias por confiar en nosotros</h2>
+            <p>Nos pondremos en contacto con usted lo más pronto posible.</p>
+            <p><em>"Nunca es tarde para mejorar"</em></p>
+            <button class="submit-btn" onclick="closeThankYouMessage()">Cerrar</button>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script>
+    // Configuración de EmailJS
+    emailjs.init("-wQhkbNrffDVsjkvy");
+
+    // Referencias a elementos del DOM
+    const elements = {
+        formModalContainer: document.getElementById('form-modal-container'),
+        closeFormModalBtn: document.querySelector('.close-form-modal'),
+        empresaForm: document.getElementById('empresa-form'),
+        alertContainer: document.getElementById('alert-container'),
+        thankYouMessage: document.getElementById('thank-you-message')
+    };
+
+    // Funciones de utilidad
+    const utils = {
+        showAlert(message, type) {
+            const alert = document.createElement('div');
+            alert.className = `alert alert-${type}`;
+            alert.textContent = message;
+            elements.alertContainer.innerHTML = '';
+            elements.alertContainer.appendChild(alert);
+            
+            setTimeout(() => alert.remove(), 5000);
+        },
+
+        getFormData() {
+            const formData = {};
+            const inputs = elements.empresaForm.querySelectorAll('input, textarea');
+            inputs.forEach(input => {
+                formData[input.id] = input.value;
+            });
+            return formData;
+        }
+    };
+
+    // Funciones del modal
+    const modalHandlers = {
+        open() {
+            elements.formModalContainer.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        },
+
+        close() {
+            elements.formModalContainer.classList.remove('active');
+            document.body.style.overflow = 'auto';
+            elements.empresaForm.reset();
+            elements.alertContainer.innerHTML = '';
+        },
+
+        showThankYou() {
+            elements.thankYouMessage.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        },
+
+        closeThankYou() {
+            elements.thankYouMessage.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+    };
+
+    // Manejador del formulario
+    const formHandler = {
+        async submit(e) {
+            e.preventDefault();
+            const formData = utils.getFormData();
+
+            try {
+                await emailjs.send(
+                    "service_vstac3d",
+                    "template_r2z381u",
+                    {
+                        to_email: "sp9979182@gmail.com",
+                        from_name: formData.empresa,
+                        from_email: formData.email,
+                        message: Object.entries(formData)
+                            .map(([key, value]) => `${key}: ${value}`)
+                            .join('\n')
+                    }
+                );
+
+                modalHandlers.close();
+                modalHandlers.showThankYou();
+                setTimeout(modalHandlers.closeThankYou, 5000);
+            } catch (error) {
+                console.error('Error al enviar el formulario:', error);
+                utils.showAlert('Error al enviar el formulario. Por favor, intente nuevamente.', 'error');
+            }
+        }
+    };
+
+    // Event listeners
+    elements.empresaForm.addEventListener('submit', formHandler.submit);
+    elements.closeFormModalBtn.addEventListener('click', modalHandlers.close);
+    elements.formModalContainer.addEventListener('click', (e) => {
+        if (e.target === elements.formModalContainer) modalHandlers.close();
+    });
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && elements.formModalContainer.classList.contains('active')) {
+            modalHandlers.close();
+        }
+    });
+
+    // Exportar funciones para uso externo
+    window.modalHandlers = modalHandlers;
+    window.closeThankYouMessage = modalHandlers.closeThankYou;
+    </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Evaluación Empresarial</title>
+    <style>
+  
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: system-ui, -apple-system, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .service-card {
+            background: #ffffff;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            cursor: pointer;
+            transition: transform 0.2s;
+            text-align: center;
+        }
+
+        .service-card:hover {
+            transform: translateY(-3px);
+        }
+
+        .service-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .evaluation-form {
+            background: white;
+            padding: 2rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            display: none;
+        }
+
+        .question {
+            margin-bottom: 1.5rem;
+        }
+
+        .options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .option {
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 0.25rem;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .option:hover {
+            background-color: #f8f9fa;
+        }
+
+        .option.selected {
+            background-color: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+
+        .button {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 0.25rem;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.2s;
+        }
+
+        .button:hover {
+            background-color: var(--secondary-color);
+        }
+
+        .result {
+            background: white;
+            padding: 2rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            text-align: center;
+            display: none;
+        }
+
+        .result-score {
+            font-size: 2rem;
+            font-weight: bold;
+            margin: 1rem 0;
+        }
+
+        .company-info {
+            margin-bottom: 1.5rem;
+        }
+
+        .company-info input {
+            width: 100%;
+            padding: 0.5rem;
+            margin-bottom: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 0.25rem;
+        }
+
+        @media (max-width: 600px) {
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+    <script>
+        const evaluationQuestions = {
+    proyectos: [
+        {
+            question: "¿Cómo calificaría la planificación de proyectos en su empresa?",
+            options: [
+                { text: "Básica - Sin metodología clara", value: 25 },
+                { text: "Metodología definida pero no siempre seguida", value: 50 },
+                { text: "Metodología bien implementada", value: 75 },
+                { text: "Metodología optimizada y en mejora continua", value: 100 }
+            ]
+        },
+        {
+            question: "¿Qué tan efectivo es el seguimiento y control de proyectos?",
+            options: [
+                { text: "Seguimiento informal", value: 25 },
+                { text: "Seguimiento regular con herramientas básicas", value: 50 },
+                { text: "Sistema de seguimiento establecido", value: 75 },
+                { text: "Sistema integral con métricas avanzadas", value: 100 }
+            ]
+        },
+        {
+            question: "¿Cómo documenta las lecciones aprendidas de los proyectos?",
+            options: [
+                { text: "No se documentan", value: 25 },
+                { text: "Documentación básica", value: 50 },
+                { text: "Sistema de documentación establecido", value: 75 },
+                { text: "Base de conocimiento completa y actualizada", value: 100 }
+            ]
+        },
+        {
+            question: "¿Cómo gestiona los recursos humanos en los proyectos?",
+            options: [
+                { text: "Asignación informal", value: 25 },
+                { text: "Asignación básica según disponibilidad", value: 50 },
+                { text: "Sistema de gestión de recursos", value: 75 },
+                { text: "Gestión optimizada de capacidades", value: 100 }
+            ]
+        },
+        {
+            question: "¿Cómo maneja los cambios en el alcance del proyecto?",
+            options: [
+                { text: "Sin control de cambios", value: 25 },
+                { text: "Proceso básico de control", value: 50 },
+                { text: "Sistema formal de control de cambios", value: 75 },
+                { text: "Gestión integral de cambios", value: 100 }
+            ]
+        },
+        {
+            question: "¿Cómo gestiona la comunicación en los proyectos?",
+            options: [
+                { text: "Comunicación informal", value: 25 },
+                { text: "Canales básicos establecidos", value: 50 },
+                { text: "Plan de comunicación definido", value: 75 },
+                { text: "Comunicación efectiva y multicanal", value: 100 }
+            ]
+        },
+        {
+            question: "¿Cómo maneja la calidad en los proyectos?",
+            options: [
+                { text: "Sin control de calidad formal", value: 25 },
+                { text: "Controles básicos de calidad", value: 50 },
+                { text: "Sistema de calidad implementado", value: 75 },
+                { text: "Gestión integral de calidad", value: 100 }
+            ]
+        },
+        {
+            question: "¿Cómo gestiona los costos del proyecto?",
+            options: [
+                { text: "Control básico de gastos", value: 25 },
+                { text: "Seguimiento regular de costos", value: 50 },
+                { text: "Sistema de control de costos", value: 75 },
+                { text: "Gestión financiera integral", value: 100 }
+            ]
+        },
+        {
+            question: "¿Cómo maneja los stakeholders del proyecto?",
+            options: [
+                { text: "Sin gestión formal", value: 25 },
+                { text: "Identificación básica", value: 50 },
+                { text: "Plan de gestión establecido", value: 75 },
+                { text: "Gestión estratégica de stakeholders", value: 100 }
+            ]
+        },
+        {
+            question: "¿Cómo gestiona la documentación del proyecto?",
+            options: [
+                { text: "Documentación mínima", value: 25 },
+                { text: "Documentación básica", value: 50 },
+                { text: "Sistema de gestión documental", value: 75 },
+                { text: "Gestión documental integral", value: 100 }
+            ]
+        },
+        {
+            question: "¿Cómo maneja los riesgos del proyecto?",
+            options: [
+                { text: "Sin gestión de riesgos", value: 25 },
+                { text: "Identificación básica", value: 50 },
+                { text: "Plan de riesgos implementado", value: 75 },
+                { text: "Gestión proactiva de riesgos", value: 100 }
+            ]
+        },
+        {
+            question: "¿Cómo gestiona el cronograma del proyecto?",
+            options: [
+                { text: "Control informal de tiempos", value: 25 },
+                { text: "Cronograma básico", value: 50 },
+                { text: "Sistema de control de tiempos", value: 75 },
+                { text: "Gestión integral de cronograma", value: 100 }
+            ]
+        },
+        {
+            question: "¿Cómo maneja las adquisiciones del proyecto?",
+            options: [
+                { text: "Proceso informal", value: 25 },
+                { text: "Proceso básico establecido", value: 50 },
+                { text: "Sistema de adquisiciones", value: 75 },
+                { text: "Gestión estratégica de compras", value: 100 }
+            ]
+        },
+        {
+            question: "¿Cómo gestiona la integración del proyecto?",
+            options: [
+                { text: "Sin integración formal", value: 25 },
+                { text: "Integración básica", value: 50 },
+                { text: "Plan de integración definido", value: 75 },
+                { text: "Integración completa y efectiva", value:100 }
+            ]
+        },
+        {
+            question: "¿Cómo maneja los conflictos en el proyecto?",
+            options: [
+                { text: "Sin proceso formal", value: 25 },
+                { text: "Resolución básica", value: 50 },
+                { text: "Sistema de resolución establecido", value: 75 },
+                { text: "Gestión proactiva de conflictos", value: 100 }
+            ]
+        },
+        {
+            question: "¿Cómo gestiona el conocimiento en los proyectos?",
+            options: [
+                { text: "Sin gestión formal", value: 25 },
+                { text: "Documentación básica", value: 50 },
+                { text: "Sistema de gestión establecido", value: 75 },
+                { text: "Gestión integral del conocimiento", value: 100 }
+            ]
+        },
+        {
+            question: "¿Cómo maneja la satisfacción del cliente?",
+            options: [
+                { text: "Sin medición formal", value: 25 },
+                { text: "Medición básica", value: 50 },
+                { text: "Sistema de medición establecido", value: 75 },
+                { text: "Gestión integral de satisfacción", value: 100 }
+            ]
+        },
+        {
+            question: "¿Cómo gestiona la innovación en los proyectos?",
+            options: [
+                { text: "Sin enfoque en innovación", value: 25 },
+                { text: "Innovación ocasional", value: 50 },
+                { text: "Proceso de innovación definido", value: 75 },
+                { text: "Cultura de innovación establecida", value: 100 }
+            ]
+        },
+        {
+            question: "¿Cómo maneja la sostenibilidad en los proyectos?",
+            options: [
+                { text: "Sin consideración formal", value: 25 },
+                { text: "Consideración básica", value: 50 },
+                { text: "Plan de sostenibilidad", value: 75 },
+                { text: "Gestión integral sostenible", value: 100 }
+            ]
+        },
+        {
+            question: "¿Cómo gestiona el cierre de los proyectos?",
+            options: [
+                { text: "Cierre informal", value: 25 },
+                { text: "Proceso básico de cierre", value: 50 },
+                { text: "Sistema de cierre establecido", value: 75 },
+                { text: "Gestión integral de cierre", value: 100 }
+            ]
+        }
+    ],
+    digitalizacion: [
+        {
+            question: "¿Cuál es el nivel de implementación digital en sus procesos?",
+            options: [
+                { text: "Procesos mayormente manuales", value: 25 },
+                { text: "Algunos procesos digitalizados", value: 50 },
+                { text: "Mayoría de procesos digitalizados", value: 75 },
+                { text: "Transformación digital completa", value: 100 }
+            ]
+        },
+        // Añadir las 19 preguntas restantes para digitalización...
+    ],
+    innovacion: [
+        {
+            question: "¿Cómo es el proceso de innovación en su empresa?",
+            options: [
+                { text: "Innovación ocasional", value: 25 },
+                { text: "Innovación regular no estructurada", value: 50 },
+                { text: "Proceso de innovación definido", value: 75 },
+                { text: "Cultura de innovación establecida", value: 100 }
+            ]
+        },
+        // Añadir las 19 preguntas restantes para innovación...
+    ],
+    impulso: [
+        {
+            question: "¿Cuál es su estrategia de crecimiento empresarial?",
+            options: [
+                { text: "Sin estrategia definida", value: 25 },
+                { text: "Estrategia básica", value: 50 },
+                { text: "Estrategia clara y medible", value: 75 },
+                { text: "Estrategia integral y adaptativa", value: 100 }
+            ]
+        },
+        // Añadir las 19 preguntas restantes para impulso...
+    ]
+};
+
+        const resultMessages = {
+            low: {
+                proyectos: "Su gestión de proyectos necesita una restructuración importante. Recomendamos implementar metodologías ágiles y herramientas de seguimiento.",
+                digitalizacion: "Es crucial iniciar un proceso de transformación digital. Sugerimos comenzar con la digitalización de procesos críticos.",
+                innovacion: "La innovación es clave para la supervivencia. Recomendamos establecer un programa de innovación estructurado.",
+                impulso: "Su empresa necesita un plan de desarrollo empresarial sólido. Sugerimos definir objetivos claros y estrategias de crecimiento."
+            },
+            medium: {
+                proyectos: "Hay bases sólidas pero espacio para mejorar. Considere optimizar el seguimiento y la gestión de riesgos.",
+                digitalizacion: "Buen avance en digitalización. Recomendamos expandir la implementación a más áreas del negocio.",
+                innovacion: "Su empresa muestra potencial innovador. Sugerimos formalizar los procesos de I+D.",
+                impulso: "Está en buen camino. Recomendamos fortalecer las estrategias de expansión y desarrollo de talento."
+            },
+            high: {
+                proyectos: "Excelente gestión de proyectos. Considere implementar mejoras continuas y optimización de procesos.",
+                digitalizacion: "Gran nivel de digitalización. Manténgase actualizado con las últimas tendencias tecnológicas.",
+                innovacion: "Fuerte cultura de innovación. Siga invirtiendo en I+D y nuevas tecnologías.",
+                impulso: "Impresionante desarrollo empresarial. Explore nuevos mercados y oportunidades de crecimiento."
+            },
+            excellent: {
+                proyectos: "Nivel excepcional de gestión de proyectos. Considere compartir mejores prácticas y mentoría.",
+                digitalizacion: "Líder en transformación digital. Mantenga el impulso y explore tecnologías emergentes.",
+                innovacion: "Referente en innovación. Siga estableciendo nuevos estándares en su industria.",
+                impulso: "Modelo de excelencia empresarial. Continue expandiendo su impacto en el mercado."
+            }
+        };
+
+        let currentService = '';
+        let selectedOptions = {};
+
+        document.querySelectorAll('.service-card').forEach(card => {
+            card.addEventListener('click', () => {
+                currentService = card.dataset.service;
+                showEvaluationForm();
+            });
+        });
+
+        function showEvaluationForm() {
+    document.querySelector('.services-grid').style.display = 'none';
+    document.querySelector('.evaluation-form').style.display = 'block';
+    document.querySelector('.result').style.display = 'none';
+    selectedOptions = {};
+    
+    const questionsContainer = document.getElementById('questions');
+    questionsContainer.innerHTML = '';
+    
+    evaluationQuestions[currentService].forEach((q, index) => {
+        const questionDiv = document.createElement('div');
+        questionDiv.className = 'question';
+        
+        const questionText = document.createElement('h3');
+        questionText.textContent = q.question;
+        questionDiv.appendChild(questionText);
+        
+        const optionsDiv = document.createElement('div');
+        optionsDiv.className = 'options';
+        
+        q.options.forEach((opt, optIndex) => {
+            const option = document.createElement('div');
+            option.className = 'option';
+            option.textContent = opt.text;
+            option.onclick = () => selectOption(index, optIndex, option);
+            optionsDiv.appendChild(option);
+        });
+        
+        questionDiv.appendChild(optionsDiv);
+        questionsContainer.appendChild(questionDiv);
+    });
+}
+
+function selectOption(questionIndex, optionIndex, element) {
+    // Remove selected class from siblings
+    const siblings = element.parentElement.children;
+    Array.from(siblings).forEach(sib => sib.classList.remove('selected'));
+    
+    // Add selected class to clicked option
+    element.classList.add('selected');
+    
+    // Store selected value
+    selectedOptions[questionIndex] = evaluationQuestions[currentService][questionIndex].options[optionIndex].value;
+}
+
+function calculateResults() {
+    const companyName = document.getElementById('companyName').value;
+    const companyEmail = document.getElementById('companyEmail').value;
+    
+    if (!companyName || !companyEmail) {
+        alert('Por favor complete la información de la empresa');
+        return;
+    }
+    
+    if (Object.keys(selectedOptions).length < evaluationQuestions[currentService].length) {
+        alert('Por favor responda todas las preguntas');
+        return;
+    }
+    
+    const totalScore = Object.values(selectedOptions).reduce((sum, value) => sum + value, 0);
+    const averageScore = totalScore / evaluationQuestions[currentService].length;
+    
+    let category;
+    if (averageScore <= 40) category = 'low';
+    else if (averageScore <= 60) category = 'medium';
+    else if (averageScore <= 80) category = 'high';
+    else category = 'excellent';
+    
+    showResults(averageScore, category);
+}
+
+function showResults(score, category) {
+    document.querySelector('.evaluation-form').style.display = 'none';
+    const resultDiv = document.querySelector('.result');
+    resultDiv.style.display = 'block';
+    
+    const scoreDiv = resultDiv.querySelector('.result-score');
+    scoreDiv.textContent = `${Math.round(score)}%`;
+    
+    const messageDiv = resultDiv.querySelector('.result-message');
+    messageDiv.textContent = resultMessages[category][currentService];
+    
+    // Add score-based styling
+    scoreDiv.style.color = getScoreColor(score);
+}
+
+function getScoreColor(score) {
+    if (score <= 40) return 'var(--danger-color)';
+    if (score <= 60) return 'var(--warning-color)';
+    if (score <= 80) return 'var(--primary-color)';
+    return 'var(--success-color)';
+}
+
+function resetEvaluation() {
+    document.querySelector('.result').style.display = 'none';
+    document.querySelector('.services-grid').style.display = 'grid';
+    document.getElementById('companyName').value = '';
+    document.getElementById('companyEmail').value = '';
+    selectedOptions = {};
+    currentService = '';
+}
+
+// Initialize event listeners when the document loads
+document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.service-card').forEach(card => {
+        card.addEventListener('click', () => {
+            currentService = card.dataset.service;
+            showEvaluationForm();
+        });
+    });
+});
+</script>
