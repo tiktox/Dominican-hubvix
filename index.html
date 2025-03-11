@@ -6,7 +6,9 @@
     
     <meta name="keywords" content="empresas que desarrollan páginas web, empresa de diseño web, gestión empresarial, crear páginas web, Dominican Hubvix">
     
-    <meta name="author" content="Dominican Hubvix">    <!-- Open Graph (Para Facebook) -->
+    <meta name="author" content="Dominican Hubvix">
+    
+    <!-- Open Graph (Para Facebook) -->
     <meta property="og:title" content="Dominican Hubvix - Desarrollo web y gestión empresarial">
     <meta property="og:description" content="Empresa líder en desarrollo web y gestión empresarial.">
     <meta property="og:image" content="https://scontent.fhex5-2.fna.fbcdn.net/v/t1.15752-9/482169794_889373686528908_3990815244860795325_n.jpg?stp=dst-jpg_s480x480_tt6&_nc_cat=103&ccb=1-7&_nc_sid=0024fc&_nc_ohc=pfyFlYadTWkQ7kNvgGMOWao&_nc_oc=Adg4QyURi-L8KPZ37qG0ulpQT7I30adsoJOtcWF6LD51Ie4C8wHT0LBXZzl854zaOVpl8p0u6G4tEmXMR5ieLD1l&_nc_ad=z-m&_nc_cid=1468&_nc_zt=23&_nc_ht=scontent.fhex5-2.fna&oh=03_Q7cD1wFrl0-r6THSgCpXsAxxCbye-RSj5rB3eLfceKnv5cvnLA&oe=67F6D578">
@@ -26,12 +28,12 @@
     <style>
         :root {
             --primary-color: #000000fd;
-            --secondary-color: #0099fffd;
+            --secondary-color: #00aeff;
             --accent-color: #00ff88;
             --light-bg: #ffffff;
             --dark-bg: #000000;
             --text-light: #ffffff;
-            --text-dark: #333333;
+            --text-dark: #ff0000;
             --gradient: linear-gradient(135deg, var(--primary-color), #000000);
         }
 
@@ -114,7 +116,7 @@
             top: 0;
             background: rgb(0, 0, 0);
             backdrop-filter: blur(10px);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 10px rgb(0, 0, 0);
             z-index: 1000;
             transition: all 0.3s ease;
         }
@@ -125,7 +127,7 @@
           color: white;
         }
         .dark-mode header {
-            background: rgba(26, 26, 26, 0.95);
+            background: rgba(0, 0, 0, 0.95)
         }
 
         nav {
@@ -138,7 +140,7 @@
         }
 
         .logo {
-            font-size: 2rem;
+            font-size: 1.8rem;
             font-weight: bold;
             color: var(--primary-color);
             text-decoration: none;
@@ -327,13 +329,13 @@
 </head>
     <header>
         <nav>
-            <a href="https://scontent.fhex5-2.fna.fbcdn.net/v/t1.15752-9/482169794_889373686528908_3990815244860795325_n.jpg?stp=dst-jpg_s480x480_tt6&_nc_cat=103&ccb=1-7&_nc_sid=0024fc&_nc_ohc=pfyFlYadTWkQ7kNvgGMOWao&_nc_oc=Adg4QyURi-L8KPZ37qG0ulpQT7I30adsoJOtcWF6LD51Ie4C8wHT0LBXZzl854zaOVpl8p0u6G4tEmXMR5ieLD1l&_nc_ad=z-m&_nc_cid=1468&_nc_zt=23&_nc_ht=scontent.fhex5-2.fna&oh=03_Q7cD1wFrl0-r6THSgCpXsAxxCbye-RSj5rB3eLfceKnv5cvnLA&oe=67F6D578" class="logo">Dominican hubvix</a>
+            <a href="#" class="logo">Dominican hubvix</a>
             <button class="hamburger">
                 <i class="fas fa-bars"></i>
             </button>
             <div class="nav-links">
                 <a href="#inicio">Inicio</a>
-                <a href="#Servicios">Servicios</a>
+                <a href="#servicios">Servicios</a>
                 <a href="#sobre-nosotros">Sobre Nosotros</a>
                 <a href="#portafolio">Portafolio</a>
                 <a href="#contacto">Contacto</a>
@@ -542,103 +544,153 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 <style>
-.form-group {
-    margin-bottom: 1.5rem;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-weight: 500;
-}
-
-.form-group input,
-.form-group select,
-.form-group textarea {
-    width: 100%;
-    padding: 0.75rem;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 1rem;
-}
-
-.form-group textarea {
-    resize: vertical;
-}
-
-#evaluation-modal .modal {
-    max-width: 500px;
-}
-</style>
-    <section class="stats">
-        <div class="stats-grid">
-            <div class="stat-item" data-aos="fade-up">
-                <div class="stat-number" data-count="4">0</div>
-                <p>Proyectos Completados</p>
+    .form-group {
+        margin-bottom: 1.5rem;
+    }
+    
+    .form-group label {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-weight: 500;
+    }
+    
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        width: 100%;
+        padding: 0.75rem;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 1rem;
+    }
+    
+    .form-group textarea {
+        resize: vertical;
+    }
+    
+    #evaluation-modal .modal {
+        max-width: 500px;
+    }
+    </style>
+        <section class="stats">
+            <div class="stats-grid">
+                <div class="stat-item" data-aos="fade-up">
+                    <div class="stat-number" data-count="99">0</div>
+                    <p>Proyectos Completados</p>
+                </div>
+                <div class="stat-item" data-aos="fade-up" data-aos-delay="100">
+                    <div class="stat-number" data-count="41">0</div>
+                    <p>Optimizaciones de Servicios</p>
+                </div>
+                <div class="stat-item" data-aos="fade-up" data-aos-delay="200">
+                    <div class="stat-number" data-count="3">0</div>
+                    <p>Empresas auditadas</p>
+                    </p>
+                </div>
+                <div class="stat-item" data-aos="fade-up" data-aos-delay="300">
+                    <div class="stat-number" data-count="13">0</div>
+                    <p>proyectos en curso</p>
+                </div>
             </div>
-            <div class="stat-item" data-aos="fade-up" data-aos-delay="100">
-                <div class="stat-number" data-count="2">0</div>
-                <p>Gestion de Proyectos</p>
-            </div>
-            <div class="stat-item" data-aos="fade-up" data-aos-delay="200">
-                <div class="stat-number" data-count="3">0</div>
-                <p>Años de Experiencia</p>
-            </div>
-            <div class="stat-item" data-aos="fade-up" data-aos-delay="300">
-                <div class="stat-number" data-count="13">0</div>
-                <p>proyectos en curso</p>
-            </div>
-        </div>
-    </section>
-    <style>
-                /* Sobre Nosotros */
-                .about {
-            padding: 5rem 5%;
-            background: var(--light-bg);
-            
-        }
-
-        .dark-mode .about {
-            background: var(--dark-bg);
-        }
-
-        .about-content {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .about-text {
-            padding-right: 2rem;
-        }
-
-        .about-image {
-            position: relative;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 05px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        .about-image img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-
+        </section>
+        <style>
+            /* Sobre Nosotros */
+            .about {
+        padding: 5rem 5%;
+        background: var(--light-bg);
+        
+    }
+    
+    .dark-mode .about {
+        background: var(--dark-bg);
+    }
+    
+    .about-content {
+        max-width: 1400px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        align-items: center;
+    }
+    
+    .about-text {
+        padding-right: 2rem;
+    }
+    
+    .about-image {
+        position: relative;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 05px 15px rgba(0, 0, 0, 0.2);
+    }
+    
+    .about-image img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+    
     </style>
     <section class="about" id="sobre-nosotros">
-        <div class="about-content">
-            <div class="about-text" data-aos="fade-right">
-                <h2>Sobre Nosotros</h2>
-                <p>Dominican Hubvix (DH) es una institución líder en la gestión e impulso de proyectos empresariales, reconocida por ser pionera en la transformación digital y en la innovación empresarial. Nuestro equipo de expertos fusiona creatividad y tecnología para potenciar el crecimiento de tu negocio, ya sea en el ámbito digital o físico, alcanzando el máximo nivel de desarrollo empresarial para tu organización. En DH, creemos firmemente que "no hay límites para mejorar" y trabajamos contigo para convertir esa visión en realidad.</p>
-            </div>
-            <div class="about-image" data-aos="fade-left">
-                <img src="https://i.pinimg.com/736x/e1/ea/20/e1ea20bcf8ed148ccdbfbe23dcb64222.jpg" alt="Equipo Hubvix">
-            </div>
+    <div class="about-content">
+        <div class="about-text" data-aos="fade-right">
+            <h2>Sobre Nosotros</h2>
+            <p>Dominican Hubvix (DH) es una institución líder en la gestión e impulso de proyectos empresariales, reconocida por ser pionera en la transformación digital y en la innovación empresarial. Nuestro equipo de expertos fusiona creatividad y tecnología para potenciar el crecimiento de tu negocio, ya sea en el ámbito digital o físico, alcanzando el máximo nivel de desarrollo empresarial para tu organización. En DH, creemos firmemente que "no hay límites para mejorar" y trabajamos contigo para convertir esa visión en realidad.</p>
         </div>
+        <div class="about-image" data-aos="fade-left">
+            <img src="https://i.pinimg.com/736x/e1/ea/20/e1ea20bcf8ed148ccdbfbe23dcb64222.jpg" alt="Equipo Hubvix">
+        </div>
+    </div>
+    </section>
+    <style>
+    /* Nuestra Misión */
+    .mission {
+        padding: 5rem 5%;
+        background: var(--light-bg);
+    }
+    
+    .dark-mode .mission {
+        background: var(--dark-bg);
+    }
+    
+    .mission-content {
+        max-width: 1400px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        align-items: center;
+    }
+    
+    .mission-image {
+        position: relative;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+    
+    .mission-image img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+    
+    .mission-text {
+        padding-left: 2rem;
+    }
+    </style>
+    
+    <section class="mission" id="nuestra-mision">
+    <div class="mission-content">
+        <div class="mission-image" data-aos="fade-right">
+            <img src="https://i.pinimg.com/736x/ea/60/64/ea6064ae8260f2ceeb7b322375fcc889.jpg" alt="Misión Dominican Hubvix">
+        </div>
+        <div class="mission-text" data-aos="fade-left">
+            <h2>Nuestra Misión</h2>
+            <p>En Dominican Hubvix, nuestra misión es impulsar el crecimiento y la innovación empresarial mediante soluciones digitales y estratégicas de alta calidad. Nos dedicamos a transformar ideas en proyectos exitosos, acompañando a emprendedores y empresas establecidas en su viaje hacia la excelencia. Trabajamos con pasión y compromiso para crear oportunidades de desarrollo sostenible, potenciando el talento dominicano y contribuyendo al fortalecimiento del ecosistema empresarial del país. Cada proyecto que emprendemos está orientado a superar expectativas, manteniendo siempre nuestra filosofía de que "no hay límites para mejorar".</p>
+        </div>
+    </div>
     </section>
     <style>
                 /* Servicios */
@@ -759,87 +811,84 @@ document.addEventListener('DOMContentLoaded', function() {
     <style>
         /* Estilos para nuevas secciones */
         
-        /* Portfolio */
-        .portfolio {
-          padding: 5rem 5%;
-          background: #f9f9f9;
+       /* Portafolio */
+       .portfolio {
+            padding: 5rem 5%;
+            background: #f9f9f9;
         }
-        
+
         .dark-mode .portfolio {
-          background: #222;
+            background: #222;
         }
-        
+
         .portfolio-filters {
-          display: flex;
-          justify-content: center;
-          flex-wrap: wrap;
-          gap: 1rem;
-          margin-bottom: 2rem;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
         }
-        
+
         .filter-btn {
-          padding: 0.5rem 1.5rem;
-          border: none;
-          background: white;
-          border-radius: 25px;
-          cursor: pointer;
-          transition: all 0.3s ease;
-          box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            padding: 0.5rem 1.5rem;
+            border: none;
+            background: white;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
         }
-        
-        .dark-mode .filter-btn {
-          background: var(--secondary-color);
-        }
-        
+
         .filter-btn.active {
-          background: var(--primary-color);
-          color: white;
+            background: var(--primary-color);
+            color: white;
         }
-        
+
         .portfolio-grid {
-          display: grid;
-          grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-          gap: 2rem;
-          max-width: 1400px;
-          margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
         }
-        
-        .cta-button.small {
-          padding: 0.5rem 1rem;
-          font-size: 0.9rem;
+
+        .portfolio-item {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            cursor: pointer;
         }
-        
-        /* Clients section */
-        .clients {
-          padding: 5rem 5%;
-          background: white;
+
+        .portfolio-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
         }
-        
-        .dark-mode .clients {
-          background: var(--dark-bg);
+
+        .portfolio-item:hover img {
+            transform: scale(1.1);
         }
-        
-        .clients-slider {
-          display: flex;
-          flex-wrap: wrap;
-          justify-content: center;
-          gap: 2rem;
-          max-width: 1400px;
-          margin: 0 auto;
+
+        .portfolio-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            padding: 1rem;
+            text-align: center;
+            color: white;
         }
-        
-        .client-logo {
-          filter: grayscale(100%);
-          opacity: 0.6;
-          transition: all 0.3s ease;
-          padding: 1rem;
+
+        .portfolio-item:hover .portfolio-overlay {
+            opacity: 1;
         }
-        
-        .client-logo:hover {
-          filter: grayscale(0);
-          opacity: 1;
-        }
-        
         /* CTA Section */
         .cta-section {
           padding: 5rem 5%;
@@ -957,82 +1006,53 @@ document.addEventListener('DOMContentLoaded', function() {
         }
                 /* Portafolio */
                 .portfolio {
-            padding: 5rem 5%;
-            background: #f9f9f9;
-        }
-
-        .dark-mode .portfolio {
-            background: #222;
-        }
-
-        .portfolio-filters {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            margin-bottom: 2rem;
-        }
-
-        .filter-btn {
-            padding: 0.5rem 1.5rem;
-            border: none;
-            background: white;
-            border-radius: 25px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .filter-btn.active {
-            background: var(--primary-color);
-            color: white;
-        }
-
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 2rem;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .portfolio-item {
-            position: relative;
-            border-radius: 15px;
-            overflow: hidden;
-            cursor: pointer;
-        }
-
-        .portfolio-item img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-            transition: transform 0.3s ease;
-        }
-
-        .portfolio-item:hover img {
-            transform: scale(1.1);
-        }
-
-        .portfolio-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.7);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            padding: 1rem;
-            text-align: center;
-            color: white;
-        }
-
-        .portfolio-item:hover .portfolio-overlay {
-            opacity: 1;
-        }
+    padding: 5rem 5%;
+    background: #f9f9f9;
+  }
+  
+  .dark-mode .portfolio {
+    background: #222;
+  }
+  
+  .portfolio-filters {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .filter-btn {
+    padding: 0.5rem 1.5rem;
+    border: none;
+    background: white;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+  
+  .dark-mode .filter-btn {
+    background: var(--secondary-color);
+  }
+  
+  .filter-btn.active {
+    background: var(--primary-color);
+    color: white;
+  }
+  
+  .portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  
+  .cta-button.small {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
       </style>
     <section class="portfolio" id="portafolio">
       <div class="section-title" data-aos="fade-up">
@@ -1130,7 +1150,6 @@ document.addEventListener('DOMContentLoaded', function() {
   
   <!-- Estilos CSS para el modal -->
   <style>
-    
     .portfolio-modal-container {
       position: fixed;
       top: 0;
@@ -1154,10 +1173,10 @@ document.addEventListener('DOMContentLoaded', function() {
     
     .portfolio-modal {
       background: #ffffff;
-      width: 100%;
+      width: 90%;
       max-width: 1000px;
-      max-height: 200vh;
-      border-radius: 20px;
+      max-height: 90vh;
+      border-radius: 15px;
       overflow: hidden;
       display: flex;
       flex-direction: column;
@@ -1276,7 +1295,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     .dark-mode .meta-item {
-      color: #ffffff;
+      color: #ddd;
     }
     
     .project-description {
@@ -1319,7 +1338,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     /* Responsive adjustments */
-    @media (max-width: 100px) {
+    @media (max-width: 900px) {
       .modal-body {
         flex-direction: column;
       }
@@ -1512,21 +1531,6 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
   </script>
-    <!-- 4. Sección de Clientes/Colaboradores -->
-    <section class="clients">
-      <div class="section-title" data-aos="fade-up">
-        <h2>Empresas que confían en nosotros</h2>
-        <p>En dominican hubvix nos esforzamos para impulsar el crecimiento empresarial y mejorar su visibilidad en el mercado.</p>
-      </div>
-      <div class="clients-slider" data-aos="fade-up">
-        <div class="client-logo"><img src="https://scontent.fhex5-1.fna.fbcdn.net/v/t1.15752-9/484213644_2025787767890719_6971422210896741145_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=0024fc&_nc_ohc=twm7Dl2Qk4gQ7kNvgH2Kt1n&_nc_oc=Adih1MRxousRCpeGxkJJ3umR9781wKJhAkol2MHqp6Kt5OEVHuq6POT-t3V6RQ-zoi3tnyVls2jVmFMq01rSph6f&_nc_ad=z-m&_nc_cid=1468&_nc_zt=23&_nc_ht=scontent.fhex5-1.fna&oh=03_Q7cD1wEg2tj5MwnIkjuuCgpDrSpgiBpDYIRmsMSAlSvD6o-ChA&oe=67F6B2CE" alt="Cliente 1"></div>
-        <div class="client-logo"><img src="/api/placeholder/200/100" alt="Cliente 2"></div>
-        <div class="client-logo"><img src="/api/placeholder/200/100" alt="Cliente 3"></div>
-        <div class="client-logo"><img src="/api/placeholder/200/100" alt="Cliente 4"></div>
-        <div class="client-logo"><img src="/api/placeholder/200/100" alt="Cliente 5"></div>
-        <div class="client-logo"><img src="/api/placeholder/200/100" alt="Cliente 6"></div>
-      </div>
-    </section>
     <style>
         .modal-container {
           position: fixed;
@@ -1708,7 +1712,6 @@ document.addEventListener('DOMContentLoaded', function() {
               <p>Estamos transformando el futuro digital de las empresas con soluciones innovadoras y personalizadas.</p>
               <div class="social-links">
                   <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
-                  <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
                   <a href="https://www.linkedin.com/in/dominican-hubvix-178372355/" class="social-link"><i class="fab fa-linkedin-in"></i></a>
                   <a href="https://www.instagram.com/hubvix?igsh=bG4wd2pzYjdicW52&utm_source=qr" class="social-link"><i class="fab fa-instagram"></i></a>
               </div>
@@ -2269,12 +2272,9 @@ document.addEventListener('DOMContentLoaded', function() {
                   } else {
                       floatingToolbar.classList.remove('active');
                       toggleIcon.style.transform = 'rotate(0)';
-                  }
-              });
-              
-              
-                  });
-              
+            }
+          });
+        });
       </script>
   </body>
   </html>
@@ -3987,7 +3987,7 @@ document.addEventListener('DOMContentLoaded', () => {
     "@type": "PostalAddress",
     "streetAddress": "av las colinas",
     "addressLocality": "Santiago de los caballeros",
-    "addressCountry": "DO"
+    "addressCountry": "Republica dominicana", "republica dominicana", "Dominican Republic" "Dominican Republic" "Dominican Republic",
   }
 }
 </script>
