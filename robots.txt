@@ -1,3 +1,5 @@
 User-agent: *
 Allow: /
-Sitemap: https://dominicanhubvix.com/sitemap.xml
+Disallow: /private/
+Disallow: /admin/
+Sitemap: https://dominican-hubvix.vercel.app/sitemap.xml
