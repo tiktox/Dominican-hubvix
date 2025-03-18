@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-        <meta name="description" content="Dominican Hubvix (DH) es una institución líder en la gestión e impulso de proyectos empresariales, reconocida por ser pionera en la transformación digital y en la innovación empresarial. Nuestro equipo de expertos fusiona creatividad y tecnología para potenciar el crecimiento de tu negocio, ya sea en el ámbito digital o físico, alcanzando el máximo nivel de desarrollo empresarial para tu organización. En DH, creemos firmemente que no hay límites para mejorar y trabajamos contigo para convertir esa visión en realidad.">
+        <meta name="description" content="Dominican Hubvix es una empresa líder en desarrollo web y gestión empresarial. Creamos páginas web profesionales y ayudamos a potenciar negocios con tecnología e innovación.">
     
     <meta name="keywords" content="empresas que desarrollan páginas web, empresa de diseño web, gestión empresarial, crear páginas web, Dominican Hubvix">
     
@@ -104,7 +104,7 @@
 
         .scroll-progress-bar {
             height: 100%;
-            background: var(--primary-color);
+            background: #000000;
             width: 0%;
             transition: width 0.1s ease;
         }
@@ -114,17 +114,17 @@
             position: fixed;
             width: 100%;
             top: 0;
-            background: rgb(0, 0, 0);
+            background: rgb(255, 255, 255);
             backdrop-filter: blur(10px);
-            box-shadow: 0 2px 10px rgb(0, 0, 0);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0);
             z-index: 1000;
             transition: all 0.3s ease;
         }
         header {
-          color: white;
+          color: rgb(0, 0, 0);
         }
         header .logo{
-          color: white;
+          color: rgb(0, 0, 0);
         }
         .dark-mode header {
             background: rgba(0, 0, 0, 0.95)
@@ -199,8 +199,8 @@
             position: absolute;
             width: 100%;
             height: 100%;
-            background: var(--secondary-color);
-            background-image: url('/api/placeholder/1920/1080');
+            background: #000000;
+            background-image: url('https://i.pinimg.com/736x/94/51/fd/9451fd112d71d6b537a64a19c71fe9ea.jpg');
             background-size: cover;
             background-position: center;
         }
@@ -245,8 +245,8 @@
         /* Stats Counter */
         .stats {
             padding: 4rem 5%;
-            background: var(--gradient);
-            color: var(--text-light);
+            background:#ACD8F5;
+            color: (var(--text-dark)) #ffffff;
         }
 
         .stats-grid {
@@ -260,7 +260,7 @@
 
         .stat-item {
             padding: 2rem;
-            background: rgba(255, 255, 255, 0.1);
+            background: rgb(255, 255, 255);
             border-radius: 15px;
             backdrop-filter: blur(10px);
         }
@@ -334,7 +334,7 @@
                 <i class="fas fa-bars"></i>
             </button>
             <div class="nav-links">
-                <a href="#inicio">Inicio</a>
+                <a href="#">Inicio</a>
                 <a href="#servicios">Servicios</a>
                 <a href="#sobre-nosotros">Sobre Nosotros</a>
                 <a href="#portafolio">Portafolio</a>
@@ -597,7 +597,7 @@ document.addEventListener('DOMContentLoaded', function() {
             /* Sobre Nosotros */
             .about {
         padding: 5rem 5%;
-        background: var(--light-bg);
+        background: #ACD8F5;
         
     }
     
@@ -615,6 +615,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     .about-text {
+        color:#000000;
         padding-right: 2rem;
     }
     
@@ -622,7 +623,7 @@ document.addEventListener('DOMContentLoaded', function() {
         position: relative;
         border-radius: 10px;
         overflow: hidden;
-        box-shadow: 0 05px 15px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 05px 15px rgba(255, 255, 255, 0.2);
     }
     
     .about-image img {
@@ -647,7 +648,7 @@ document.addEventListener('DOMContentLoaded', function() {
     /* Nuestra Misión */
     .mission {
         padding: 5rem 5%;
-        background: var(--light-bg);
+        background: #ACD8F5;
     }
     
     .dark-mode .mission {
@@ -655,6 +656,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     .mission-content {
+        color: rgb(0, 0, 0);
         max-width: 1400px;
         margin: 0 auto;
         display: grid;
@@ -695,6 +697,7 @@ document.addEventListener('DOMContentLoaded', function() {
     <style>
                 /* Servicios */
                 .services {
+            background: #ACD8F5;
             padding: 5rem 5%;
             max-width: 1400px;
             margin: 0 auto;
@@ -1007,7 +1010,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 /* Portafolio */
                 .portfolio {
     padding: 5rem 5%;
-    background: #f9f9f9;
+    background: #ACD8F5;
   }
   
   .dark-mode .portfolio {
@@ -1068,7 +1071,7 @@ document.addEventListener('DOMContentLoaded', function() {
       </div>
     
       <div class="portfolio-grid">
-        <div class="portfolio-item" data-category="digitalizacion" data-aos="fade-up">
+        <div class="portfolio-item" data-category="digitalizacion - clinica dental" data-aos="fade-up">
           <img src="https://i.pinimg.com/736x/36/f3/6e/36f36e8b23084f4f75da47a353521d1e.jpg" alt="Proyecto de Gestión">
           <div class="portfolio-overlay">
             <h3>Digitalizacion empresarial</h3>
@@ -1092,6 +1095,14 @@ document.addEventListener('DOMContentLoaded', function() {
             <a href="#" class="cta-button small">Ver detalles</a>
           </div>
         </div>
+        <div class="portfolio-item" data-category="digitalizacionq - tienda" data-aos="fade-up" data-aos-delay="300">
+            <img src="https://scontent.fsti4-2.fna.fbcdn.net/v/t1.15752-9/483135502_1824053015037372_5084707633728105275_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=0024fc&_nc_ohc=RmaHncOO_X4Q7kNvgFxGYrv&_nc_oc=AdiL-QHc8eAB6mjNto69N__AXfdgkCIq4x7KZ23NBcrAL2kdoyF7fBBwI2gtPmU96k0&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fsti4-2.fna&oh=03_Q7cD1wHeZNXLoK5mPvwUuEl4_2W8g4-2i7JFyL1MWnPx9OZ-sQ&oe=67FC2928" alt="Proyecto de Digitalización">
+            <div class="portfolio-overlay">
+              <h3>Digitalizacion de tienda</h3>
+              <p>Desarrollo web - Sector retail</p>
+              <a href="#" class="cta-button small">Ver detalles</a>
+            </div>
+          </div>
       </div>
     </section>
     <!-- Modal del Portafolio -->
@@ -1200,7 +1211,7 @@ document.addEventListener('DOMContentLoaded', function() {
       align-items: center;
       padding: 1.5rem 2rem;
       background: var(--gradient);
-      color: white;
+      color: rgb(255, 255, 255);
     }
     
     .modal-close-btn {
@@ -1365,13 +1376,13 @@ document.addEventListener('DOMContentLoaded', function() {
   
   <!-- JavaScript para la funcionalidad del modal -->
   <script>
- document.addEventListener('DOMContentLoaded', function() {
+  document.addEventListener('DOMContentLoaded', function() {
   // Datos de ejemplo para proyectos (puedes reemplazar con tus datos reales)
   const projectsData = {
-    'digitalizacion-empresarial': {
+    'digitalizacion-clinica': {
       title: 'Digitalización Empresarial',
       subtitle: 'Desarrollo web - Sector salud',
-      category: 'Digitalización',
+      category: 'Digitalizacin',
       client: 'Ultra clinica dental',
       date: '2025',
       description: 'Implementamos una solución de digitalización completa para una importante clínica, optimizando la gestión de pacientes, historiales médicos y procesos administrativos mediante una plataforma web intuitiva que mejoró la eficiencia operativa en un 45%.',
@@ -1385,8 +1396,6 @@ document.addEventListener('DOMContentLoaded', function() {
         'https://scontent.fsti4-1.fna.fbcdn.net/v/t1.15752-9/479737888_991578068967874_230887108581911416_n.png?_nc_cat=111&ccb=1-7&_nc_sid=0024fc&_nc_ohc=9h3_8qhqimYQ7kNvgFdRe6o&_nc_oc=AdhVKQMT7cVZJfJQDZ7zwpPOJm-gWvRI7QiKhrP6i5Y_GFrh6M5GEW9DzssVxUruXhE&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fsti4-1.fna&oh=03_Q7cD1gHw3A5Z9Dy35XlUlcqSeZHQImMLG24Mrk3GGoyjHX6LiQ&oe=67DDFD81',
         'https://scontent.fsti4-2.fna.fbcdn.net/v/t1.15752-9/475768834_909775531231122_6078577652801037164_n.png?_nc_cat=105&ccb=1-7&_nc_sid=0024fc&_nc_ohc=j73deA8pihMQ7kNvgFVN_hj&_nc_oc=AdiXFnMbjN2fmCviTBHjElXz8CqmUsr_L2mB4xFisEOERLOKQ1GInWdPHPCZFzKhmcg&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fsti4-2.fna&oh=03_Q7cD1gHgtP7EbPWTyexD1CM73V8GIf8FIA3R5nwJ0MhlNS0w8Q&oe=67DE0196',
         'https://scontent.fsti4-2.fna.fbcdn.net/v/t1.15752-9/480568741_1044741707412982_283530811582575835_n.png?_nc_cat=102&ccb=1-7&_nc_sid=0024fc&_nc_ohc=OqvZd-Vs2RwQ7kNvgEPWAhm&_nc_oc=AdjsMA9DlEsHmJ0FLYDYY4gKS7Exe-7ZO6rvfb3SyY_WaFHDJdLGf9EfwXc7xzp7AF4&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fsti4-2.fna&oh=03_Q7cD1gE55E-wMUj-mZD3rpuGvxFABh7ij20b7Kvk2YWP44TIwQ&oe=67DDE8F6',
-        'https://scontent.fhex4-2.fna.fbcdn.net/v/t1.15752-9/482649829_3067503626750482_3554400521044362842_n.png?_nc_cat=108&ccb=1-7&_nc_sid=0024fc&_nc_ohc=QH8i1nfpnXAQ7kNvgEd_RRe&_nc_oc=Adgq7R07AG8HHo0L3-la3abESaVKbNYlGql__ZfMGtfC2m3Dc5pu3_89iFV90y7AQr8&_nc_ad=z-m&_nc_cid=1468&_nc_zt=23&_nc_ht=scontent.fhex4-2.fna&oh=03_Q7cD1wFvZHsTjucQjODFdpIMQOYLxpOFifCHVAhk90jdOlcpMQ&oe=67F377CD'
-
       ],
       similarProductLink: 'https://clinica-dental01.web.app/' // Link añadido aquí
     },
@@ -1428,20 +1437,42 @@ document.addEventListener('DOMContentLoaded', function() {
         'https://scontent.fsti4-1.fna.fbcdn.net/v/t1.15752-9/480054186_1027611749412093_4717539874143873127_n.png?_nc_cat=100&ccb=1-7&_nc_sid=0024fc&_nc_ohc=p44MRs5pJOkQ7kNvgFGe6Nf&_nc_oc=Adg1HcZHtTR7za_scHf-YKw9smCGzXxrn2l2Gy4NwtADJgq8eJjRGdsAwO1hR7qybI0&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fsti4-1.fna&oh=03_Q7cD1gE3q69K12uaF3izHnF9jup07OqRXsZ_Ha0lNtXQ2X1Elw&oe=67E18DF6'
       ],
       similarProductLink: 'https://pro-innova-rd.firebaseapp.com/' // Link añadido aquí
+    },
+    'digitalizacion-tienda': {
+      title: 'Digitalización Tienda',
+      subtitle: 'Tienda Online',
+      category: 'Digitalizacion',
+      client: 'Cronovix Store',
+      date: '2025',
+      description: 'Creamos esta tienda online con la visión de vender productos online de forma profesional y organizada organizados por categoria y por tipo de marcas',
+      features: [
+        'Tenis de baloncesto',
+        'Produtos de belleza',
+        'Chaquetas de invierno',
+        'Carteras de marca',
+      ],
+      images: [
+        'https://scontent.fsti4-1.fna.fbcdn.net/v/t1.15752-9/483705915_629894470003119_4279251257935280974_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=0024fc&_nc_ohc=uqq4k1GOQ3oQ7kNvgEuRFNK&_nc_oc=AdhbYV-EmTzNDJrpunzs56-Y2nhT1cfzGdnMl8iDZyVdkLyDZaw5fmLHABpHDdf8Hf4&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fsti4-1.fna&oh=03_Q7cD1wG0iKlWHsH9FhJZr_Mm8MEBBS1OiJFbfg9s8i6__Wg_QA&oe=67FC1E3F',
+        'https://scontent.fsti4-2.fna.fbcdn.net/v/t1.15752-9/483164548_1017835060203929_402374474914712956_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=0024fc&_nc_ohc=1v3TAjRV508Q7kNvgE4RCKl&_nc_oc=AdhjHG9LgvhzPPDXgKvW7WNMYuK3TgOOFs8BQhy-bugneS8NBJ9SdDDOzDDtS2XSwk0&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fsti4-2.fna&oh=03_Q7cD1wEvzb0eXKTSBf-QPjqn_TEBiyOGHGBZABlb9W7qEcWb4w&oe=67FC2FC7',
+        'https://scontent.fsti4-1.fna.fbcdn.net/v/t1.15752-9/483097387_1163775921879428_8874508839203162478_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=0024fc&_nc_ohc=5OoWrpsnON0Q7kNvgEiGvoC&_nc_oc=Adh9_nIIWCORJ4_1Zbl79umySs1H1ey4mZRATsbQCuMB9e1InWhZpBPURI7qcvxDAKM&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fsti4-1.fna&oh=03_Q7cD1wEaT_0SqUqR9i5SOlbJBKqEFGR6d5EdCmrJac5SGmvLJg&oe=67FC1BB4'
+      ],
+      similarProductLink: 'https://cielos-7.web.app/' // Link añadido aquí
     }
   };
-
+  
   // Función para abrir el modal
   function openModal(projectId) {
     let project;
     
     if (projectId.includes('Digitalizacion')) {
-  project = projectsData['digitalizacion-empresarial'];
+  project = projectsData['digitalizacion-clinica'];
 } else if (projectId.includes('Gestion')) {
   project = projectsData['transformacion-digital'];
 } else if (projectId.includes('Plataforma')) {
   project = projectsData['plataforma-innovacion'];
-}
+} else if (projectId.includes('Digitalizacion')) {
+    project = projectsData['digitalizacion-tienda'];
+} 
     
     // Actualizar el contenido del modal
     document.getElementById('modal-title').textContent = project.title;
@@ -1573,18 +1604,18 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         
         .modal-header {
-          background: var(--gradient);
+          background: #ACD8F5;
           padding: 20px;
           display: flex;
           justify-content: space-between;
           align-items: center;
-          color: white;
+          color: rgb(0, 0, 0);
         }
         
         .close-modal {
           background: none;
           border: none;
-          color: white;
+          color: rgb(0, 0, 0);
           font-size: 24px;
           cursor: pointer;
           transition: all 0.3s ease;
@@ -1636,8 +1667,8 @@ document.addEventListener('DOMContentLoaded', function() {
     <style>
         /* Footer */
         footer {
-            color:#ffffff;
-            background: var(--secondary-color);
+            color:#000000;
+            background: #ffffff;
             color: var(--text-light);
             padding: 4rem 5% 2rem;
         }
@@ -1665,8 +1696,8 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         .footer-links a {
-            color: var(--text-light);
-            text-decoration: none;
+            color: #000000;
+            text-decoration: #000000;
             opacity: 0.8;
             transition: opacity 0.3s ease;
         }
@@ -1683,7 +1714,7 @@ document.addEventListener('DOMContentLoaded', function() {
         .social-link {
             width: 40px;
             height: 40px;
-            background: rgba(255, 255, 255, 0.1);
+            background: rgb(0, 0, 0);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -1695,7 +1726,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         .social-link:hover {
             color:#ffffff;
-            background: var(--primary-color);
+            background: #008cff;
             transform: translateY(-3px);
         }
 
@@ -1719,7 +1750,7 @@ document.addEventListener('DOMContentLoaded', function() {
           <div class="footer-section">
               <h3>Enlaces Rápidos</h3>
               <ul class="footer-links">
-                  <li><a href="#inicio">Inicio</a></li>
+                  <li><a href="#">Inicio</a></li>
                   <li><a href="#openEvaluation">Servicios</a></li>
                   <li><a href="#sobre-nosotros">Sobre Nosotros</a></li>
                   <li><a href="#portafolio">Portafolio</a></li>
@@ -1739,12 +1770,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 border: none;
                 border-radius: 5px;
                 background: rgba(255, 255, 255, 0.1);
-                color: var(--text-light);
+                color: #000000;
             }
 
             .newsletter button {
                 padding: 0.8rem 1.5rem;
-                background: var(--primary-color);
+                background: #000000;
                 border: none;
                 border-radius: 5px;
                 color: white;
@@ -1753,7 +1784,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
 
             .newsletter button:hover {
-                background: #ff4d7d;
+                background: rgb(0, 131, 253);
             }
           </style>
           <div class="footer-section">
@@ -1766,7 +1797,7 @@ document.addEventListener('DOMContentLoaded', function() {
           </div>
       </div>
       <div class="footer-bottom">
-          <p>&copy; 2025 Dominican hubvix. Todos los derechos reservados.</p>
+          <p>&copy; 2025 Hubvix. Todos los derechos reservados.</p>
       </div>
   </footer>
   <!DOCTYPE html>
@@ -1990,9 +2021,6 @@ document.addEventListener('DOMContentLoaded', function() {
       </style>
   </head>
   <body>
-      <!-- Botón Ojo Flotante -->
-  
-      <!-- Ventana Emergente (Carta) -->
       <div class="letter-modal" id="letterModal">
           <div class="letter">
               <div class="letter-header">
@@ -2006,7 +2034,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     <br>  
                   </p>
                   <p>Nos esforzamos por crear un impacto positivo en la sociedad mediante la generación de empleo, el apoyo al emprendimiento y la democratización del acceso a soluciones tecnológicas que permitan a individuos y empresas alcanzar su máximo potencial.</p>
-                  <img src="https://i.pinimg.com/736x/ef/98/c6/ef98c6dd696241318ceacd271fea0552.jpg" alt="Imagen informativa">
+                  
               </div>
           </div>
       </div>
@@ -3998,7 +4026,7 @@ document.addEventListener('DOMContentLoaded', () => {
   "name": "Dominican Hubvix",
   "url": "https://dominican-hubvix.vercel.app/",
   "image": "https://tudominio.com/logo.png",
-  "description": "Dominican hubvix (DH) es una institución líder en la gestión e impulso de proyectos empresariales, reconocida por ser pionera en la transformación digital y en la innovación empresarial. Nuestro equipo de expertos fusiona creatividad y tecnología para potenciar el crecimiento de tu negocio, ya sea en el ámbito digital o físico, alcanzando el máximo nivel de desarrollo empresarial para tu organización. En DH, creemos firmemente que "no hay límites para mejorar" y trabajamos contigo para convertir esa visión en realidad.",
+  "description": "Empresa líder en desarrollo web y gestión empresarial.",
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "Calle Principal #123",
