@@ -1,0 +1,154 @@
+
+          body {
+              margin: 0;
+              padding: 0;
+              font-family: Arial, sans-serif;
+              background-color: #0099ff;
+              height: 100vh;
+              position: relative;
+          }
+  
+          .navbar {
+              background-color: #000;
+              color: white;
+              padding: 15px 20px;
+              display: flex;
+              justify-content: space-between;
+          }
+  
+          .navbar .logo {
+              font-size: 10px;
+              font-weight: bold;
+          }
+  
+          .navbar .menu {
+              display: flex;
+              gap: 20px;
+          }
+  
+          .navbar .menu a {
+              color: white;
+              text-decoration: none;
+          }
+  
+          .content {
+              color: white;
+              text-align: center;
+              padding-top: 100px;
+          }
+  
+          .content h1 {
+              font-size: 10px;
+              text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+              margin-bottom: 10px;
+          }
+  
+          .content h2 {
+              font-size: 10px;
+              text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+              margin-top: 0;
+          }
+  
+          .cta-button {
+              background-color: #000;
+              color: white;
+              border: none;
+              padding: 12px 24px;
+              border-radius: 25px;
+              font-size: 16px;
+              cursor: pointer;
+              margin-top: 20px;
+          }
+  
+          /* Botón flotante y barra de herramientas */
+          .floating-button {
+              position: fixed;
+              right: 05px;
+              top: 50%;
+              transform: translateY(-50%);
+              width: 18px;
+              height: 150px;
+              background-color: #00000075;
+              border-radius: 15px;
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+              cursor: pointer;
+              z-index: 10;
+          }
+  
+          .floating-button .toggle-icon {
+              color: white;
+              font-size: 12px;
+              transition: transform 0.3s ease;
+          }
+  
+          .floating-toolbar {
+              position: fixed;
+              right: 40px;
+              top: 50%;
+              transform: translateY(-50%);
+              background-color: rgba(255, 255, 255, 0.342);
+              border-radius: 10px;
+              padding: 15px;
+              display: none;
+              flex-direction: column;
+              gap: 15px;
+              z-index: 99;
+              box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+              transition: transform 0.3s ease, opacity 0.3s ease;
+              opacity: 0;
+              transform: translateY(-50%) translateX(20px);
+          }
+  
+          .floating-toolbar.active {
+              display: flex;
+              opacity: 1;
+              transform: translateY(-50%) translateX(0);
+          }
+  
+          .toolbar-button {
+              width: 40px;
+              height: 40px;
+              border-radius: 50%;
+              background-color: #007bff;
+              color: white;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              cursor: pointer;
+              font-size: 18px;
+              transition: background-color 0.2s ease;
+          }
+  
+          .toolbar-button:hover {
+              background-color: #0056b3;
+          }
+  
+          .toolbar-button:nth-child(2) {
+              background-color: #28a745;
+          }
+  
+          .toolbar-button:nth-child(2):hover {
+              background-color: #218838;
+          }
+  
+          .toolbar-button:nth-child(3) {
+              background-color: #000000;
+          }
+  
+          .toolbar-button:nth-child(3):hover {
+              background-color: #000000;
+          }
+  
+          /* Líneas de fondo */
+          .background-lines {
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+              z-index: -1;
+              opacity: 0.2;
+          }
