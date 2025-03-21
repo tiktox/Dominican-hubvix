@@ -2060,9 +2060,9 @@ font-size: 0.9rem;
           stroke-dashoffset: 164; /* Reinicia el ciclo */
         }
       }
-   /* Estilos para la sección de Actualizaciones */
+      /* Estilos para la sección de Actualizaciones */
     .updates {
-        padding: 80px 20px;
+        padding: 60px 15px;
         background-color: #ACD8F5;
     }
     
@@ -2072,7 +2072,7 @@ font-size: 0.9rem;
     }
     
     .section-title h2 {
-        font-size: 2.5rem;
+        font-size: 2rem;
         margin-bottom: 15px;
         color: #000000;
         position: relative;
@@ -2082,7 +2082,7 @@ font-size: 0.9rem;
     .section-title h2:after {
         content: '';
         position: absolute;
-        width: 100px;
+        width: 80px;
         height: 3px;
         background-color: #3a86ff;
         bottom: -10px;
@@ -2091,9 +2091,9 @@ font-size: 0.9rem;
     }
     
     .section-title p {
-        font-size: 1.1rem;
+        font-size: 1rem;
         color: #252323;
-        max-width: 700px;
+        max-width: 90%;
         margin: 0 auto;
     }
     
@@ -2106,7 +2106,7 @@ font-size: 0.9rem;
         position: relative;
         overflow: hidden;
         margin: 0 auto;
-        max-width: 1000px;
+        max-width: 100%;
         border-radius: 10px;
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.158);
     }
@@ -2141,23 +2141,10 @@ font-size: 0.9rem;
         height: 100%;
     }
     
-    @media (min-width: 750px) {
-        .featured-card {
-            flex-direction: row;
-            height: 400px;
-        }
-    }
-    
     .featured-image {
-        flex: 0 0 100%;
         position: relative;
         overflow: hidden;
-    }
-    
-    @media (min-width: 1000px) {
-        .featured-image {
-            flex: 0 0 50%;
-        }
+        height: 220px;
     }
     
     .featured-image img {
@@ -2173,34 +2160,34 @@ font-size: 0.9rem;
     
     .featured-tag {
         position: absolute;
-        top: 15px;
-        left: 15px;
+        top: 10px;
+        left: 10px;
         background-color: #3a86ff;
         color: #fff;
-        padding: 5px 12px;
+        padding: 4px 10px;
         border-radius: 5px;
-        font-size: 0.85rem;
+        font-size: 0.8rem;
         font-weight: 600;
         z-index: 2;
     }
     
     .featured-content {
         flex: 1;
-        padding: 50px;
+        padding: 20px;
         display: flex;
         flex-direction: column;
     }
     
     .featured-content h3 {
-        font-size: 1.5rem;
-        margin-bottom: 10px;
+        font-size: 1.3rem;
+        margin-bottom: 8px;
         color: #333;
     }
     
     .featured-date {
-        font-size: 0.9rem;
+        font-size: 0.85rem;
         color: #5e5e5e;
-        margin-bottom: 15px;
+        margin-bottom: 12px;
     }
     
     .featured-date i {
@@ -2208,16 +2195,17 @@ font-size: 0.9rem;
     }
     
     .featured-excerpt {
-        margin-bottom: 20px;
-        line-height: 1.6;
+        margin-bottom: 15px;
+        line-height: 1.5;
         color: #555;
         flex: 1;
+        font-size: 0.95rem;
     }
     
     .cta-button.small {
         align-self: flex-start;
-        padding: 8px 20px;
-        font-size: 0.9rem;
+        padding: 7px 18px;
+        font-size: 0.85rem;
         background-color: #3a86ff;
         color: #fff;
         border: none;
@@ -2236,8 +2224,8 @@ font-size: 0.9rem;
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
-        width: 40px;
-        height: 40px;
+        width: 36px;
+        height: 36px;
         border-radius: 50%;
         background-color: rgba(0, 0, 0, 0.8);
         border: none;
@@ -2252,12 +2240,12 @@ font-size: 0.9rem;
     
     .carousel-control.prev {
         color: #ffffff;
-        left: 15px;
+        left: 10px;
     }
     
     .carousel-control.next {
         color:#ffffff;
-        right: 15px;
+        right: 10px;
     }
     
     .carousel-control:hover {
@@ -2266,17 +2254,17 @@ font-size: 0.9rem;
     
     .carousel-indicators {
         position: absolute;
-        bottom: 15px;
+        bottom: 10px;
         left: 50%;
-        transform: translateX(-1000%);
+        transform: translateX(-50%);
         display: flex;
         gap: 8px;
         z-index: 3;
     }
     
     .indicator {
-        width: 10px;
-        height: 10px;
+        width: 8px;
+        height: 8px;
         border-radius: 50%;
         background-color: rgba(255, 255, 255, 0.5);
         cursor: pointer;
@@ -2285,4 +2273,102 @@ font-size: 0.9rem;
     
     .indicator.active {
         background-color: #3a86ff;
+    }
+    
+    /* Media queries para responsividad */
+    @media (min-width: 576px) {
+        .featured-image {
+            height: 250px;
+        }
+        
+        .featured-content {
+            padding: 25px;
+        }
+    }
+    
+    @media (min-width: 768px) {
+        .updates {
+            padding: 70px 20px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.2rem;
+        }
+        
+        .section-title p {
+            font-size: 1.05rem;
+        }
+        
+        .carousel-container {
+            max-width: 90%;
+        }
+        
+        .featured-content {
+            padding: 30px;
+        }
+        
+        .featured-content h3 {
+            font-size: 1.4rem;
+        }
+    }
+    
+    @media (min-width: 992px) {
+        .featured-card {
+            flex-direction: row;
+            height: 350px;
+        }
+        
+        .featured-image {
+            flex: 0 0 50%;
+            height: auto;
+        }
+        
+        .featured-content {
+            padding: 40px;
+        }
+        
+        .carousel-container {
+            max-width: 900px;
+        }
+    }
+    
+    @media (max-width: 575px) {
+        .carousel-control {
+            width: 32px;
+            height: 32px;
+        }
+        
+        .featured-tag {
+            font-size: 0.75rem;
+            padding: 3px 8px;
+        }
+    }
+    
+    /* Optimizaciones para iPhone */
+    @media (max-width: 414px) {
+        .updates {
+            padding: 40px 10px;
+        }
+        
+        .section-title h2 {
+            font-size: 1.8rem;
+        }
+        
+        .featured-image {
+            height: 180px;
+        }
+        
+        .featured-content {
+            padding: 15px;
+        }
+        
+        .featured-content h3 {
+            font-size: 1.2rem;
+            margin-bottom: 6px;
+        }
+        
+        .featured-excerpt {
+            margin-bottom: 12px;
+            font-size: 0.9rem;
+        }
     }
