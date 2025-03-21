@@ -2060,7 +2060,7 @@ font-size: 0.9rem;
           stroke-dashoffset: 164; /* Reinicia el ciclo */
         }
       }
-      /* Estilos para la sección de Actualizaciones */
+     /* Estilos para la sección de Actualizaciones */
     .updates {
         padding: 60px 15px;
         background-color: #ACD8F5;
@@ -2202,11 +2202,11 @@ font-size: 0.9rem;
         font-size: 0.95rem;
     }
     
-    .cta-button.small {
+    .cta-button-01.small {
         align-self: flex-start;
         padding: 7px 18px;
         font-size: 0.85rem;
-        background-color: #3a86ff;
+        background-color: #000000;
         color: #fff;
         border: none;
         border-radius: 5px;
@@ -2216,7 +2216,7 @@ font-size: 0.9rem;
         display: inline-block;
     }
     
-    .cta-button.small:hover {
+    .cta-button-01.small:hover {
         background-color: #2a75e8;
     }
     
@@ -2266,7 +2266,7 @@ font-size: 0.9rem;
         width: 8px;
         height: 8px;
         border-radius: 50%;
-        background-color: rgba(255, 255, 255, 0.5);
+        background-color: rgba(0, 0, 0, 0.5);
         cursor: pointer;
         transition: background-color 0.3s ease;
     }
