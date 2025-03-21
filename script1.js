@@ -1141,7 +1141,7 @@ document.addEventListener('DOMContentLoaded', () => {
       });
   });
 });
-document.addEventListener('DOMContentLoaded', function() {
+ document.addEventListener('DOMContentLoaded', function() {
         // Inicializar AOS para animaciones de scroll
         if (typeof AOS !== 'undefined') {
             AOS.init({
@@ -1201,13 +1201,13 @@ document.addEventListener('DOMContentLoaded', function() {
         });
         
         // Optimizar intervalo para mejor rendimiento en móviles
-        let carouselInterval = setInterval(() => showSlide(currentSlide + 1), 6000);
+        let carouselInterval = setInterval(() => showSlide(currentSlide + 1), 9000);
         
         // Detener autoplay cuando se interactúa con el carrusel
         const pauseAutoplay = () => clearInterval(carouselInterval);
         const resumeAutoplay = () => {
             clearInterval(carouselInterval);
-            carouselInterval = setInterval(() => showSlide(currentSlide + 1), 6000);
+            carouselInterval = setInterval(() => showSlide(currentSlide + 1), 9000);
         };
         
         carousel.addEventListener('mouseenter', pauseAutoplay);
