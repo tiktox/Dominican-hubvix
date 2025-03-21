@@ -1141,3 +1141,46 @@ document.addEventListener('DOMContentLoaded', () => {
       });
   });
 });
+ document.addEventListener('DOMContentLoaded', function() {
+            // Inicializar AOS para animaciones de scroll
+            if (typeof AOS !== 'undefined') {
+                AOS.init({
+                    duration: 800,
+                    once: true,
+                    offset: 50
+                });
+            }
+            
+            // Funcionalidad para el carrusel de actualizaciones destacadas
+            const carousel = document.getElementById('featuredCarousel');
+            const slides = carousel.querySelectorAll('.carousel-slide');
+            const prevBtn = document.getElementById('featuredPrev');
+            const nextBtn = document.getElementById('featuredNext');
+            const indicators = document.getElementById('featuredIndicators').querySelectorAll('.indicator');
+            
+            let currentSlide = 0;
+            
+            function showSlide(index) {
+                slides[currentSlide].classList.remove('active');
+                indicators[currentSlide].classList.remove('active');
+                
+                currentSlide = (index + slides.length) % slides.length;
+                
+                slides[currentSlide].classList.add('active');
+                indicators[currentSlide].classList.add('active');
+            }
+            
+            prevBtn.addEventListener('click', () => showSlide(currentSlide - 1));
+            nextBtn.addEventListener('click', () => showSlide(currentSlide + 1));
+            
+            indicators.forEach((indicator, index) => {
+                indicator.addEventListener('click', () => showSlide(index));
+            });
+            
+            let carouselInterval = setInterval(() => showSlide(currentSlide + 1), 10000);
+            
+            carousel.addEventListener('mouseenter', () => clearInterval(carouselInterval));
+            carousel.addEventListener('mouseleave', () => {
+                carouselInterval = setInterval(() => showSlide(currentSlide + 1), 10000);
+            });
+        });
