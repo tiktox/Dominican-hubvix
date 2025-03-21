@@ -1141,46 +1141,96 @@ document.addEventListener('DOMContentLoaded', () => {
       });
   });
 });
- document.addEventListener('DOMContentLoaded', function() {
-            // Inicializar AOS para animaciones de scroll
-            if (typeof AOS !== 'undefined') {
-                AOS.init({
-                    duration: 800,
-                    once: true,
-                    offset: 50
-                });
-            }
-            
-            // Funcionalidad para el carrusel de actualizaciones destacadas
-            const carousel = document.getElementById('featuredCarousel');
-            const slides = carousel.querySelectorAll('.carousel-slide');
-            const prevBtn = document.getElementById('featuredPrev');
-            const nextBtn = document.getElementById('featuredNext');
-            const indicators = document.getElementById('featuredIndicators').querySelectorAll('.indicator');
-            
-            let currentSlide = 0;
-            
-            function showSlide(index) {
-                slides[currentSlide].classList.remove('active');
-                indicators[currentSlide].classList.remove('active');
-                
-                currentSlide = (index + slides.length) % slides.length;
-                
-                slides[currentSlide].classList.add('active');
-                indicators[currentSlide].classList.add('active');
-            }
-            
-            prevBtn.addEventListener('click', () => showSlide(currentSlide - 1));
-            nextBtn.addEventListener('click', () => showSlide(currentSlide + 1));
-            
-            indicators.forEach((indicator, index) => {
-                indicator.addEventListener('click', () => showSlide(index));
+document.addEventListener('DOMContentLoaded', function() {
+        // Inicializar AOS para animaciones de scroll
+        if (typeof AOS !== 'undefined') {
+            AOS.init({
+                duration: 800,
+                once: true,
+                offset: 50
             });
+        }
+        
+        // Funcionalidad para el carrusel de actualizaciones destacadas
+        const carousel = document.getElementById('featuredCarousel');
+        const slides = carousel.querySelectorAll('.carousel-slide');
+        const prevBtn = document.getElementById('featuredPrev');
+        const nextBtn = document.getElementById('featuredNext');
+        const indicators = document.getElementById('featuredIndicators').querySelectorAll('.indicator');
+        
+        let currentSlide = 0;
+        
+        function showSlide(index) {
+            slides[currentSlide].classList.remove('active');
+            indicators[currentSlide].classList.remove('active');
             
-            let carouselInterval = setInterval(() => showSlide(currentSlide + 1), 10000);
+            currentSlide = (index + slides.length) % slides.length;
             
-            carousel.addEventListener('mouseenter', () => clearInterval(carouselInterval));
-            carousel.addEventListener('mouseleave', () => {
-                carouselInterval = setInterval(() => showSlide(currentSlide + 1), 10000);
-            });
+            slides[currentSlide].classList.add('active');
+            indicators[currentSlide].classList.add('active');
+        }
+        
+        // Optimizar para dispositivos táctiles
+        let touchStartX = 0;
+        let touchEndX = 0;
+        
+        carousel.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        }, {passive: true});
+        
+        carousel.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        }, {passive: true});
+        
+        function handleSwipe() {
+            if (touchEndX < touchStartX) {
+                // Deslizar a la izquierda
+                showSlide(currentSlide + 1);
+            } else if (touchEndX > touchStartX) {
+                // Deslizar a la derecha
+                showSlide(currentSlide - 1);
+            }
+        }
+        
+        prevBtn.addEventListener('click', () => showSlide(currentSlide - 1));
+        nextBtn.addEventListener('click', () => showSlide(currentSlide + 1));
+        
+        indicators.forEach((indicator, index) => {
+            indicator.addEventListener('click', () => showSlide(index));
         });
+        
+        // Optimizar intervalo para mejor rendimiento en móviles
+        let carouselInterval = setInterval(() => showSlide(currentSlide + 1), 6000);
+        
+        // Detener autoplay cuando se interactúa con el carrusel
+        const pauseAutoplay = () => clearInterval(carouselInterval);
+        const resumeAutoplay = () => {
+            clearInterval(carouselInterval);
+            carouselInterval = setInterval(() => showSlide(currentSlide + 1), 6000);
+        };
+        
+        carousel.addEventListener('mouseenter', pauseAutoplay);
+        carousel.addEventListener('mouseleave', resumeAutoplay);
+        carousel.addEventListener('touchstart', pauseAutoplay, {passive: true});
+        carousel.addEventListener('touchend', resumeAutoplay, {passive: true});
+        
+        // Precargar imágenes para mejor rendimiento
+        function preloadImages() {
+            slides.forEach(slide => {
+                const img = slide.querySelector('img');
+                if (img) {
+                    const newImg = new Image();
+                    newImg.src = img.src;
+                }
+            });
+        }
+        
+        preloadImages();
+        
+        // Ajustar para diferentes orientaciones de dispositivo
+        window.addEventListener('resize', function() {
+            // Reiniciar el carrusel si cambia la orientación del dispositivo
+            showSlide(currentSlide);
+        });
+    });
