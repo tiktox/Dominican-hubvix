@@ -362,7 +362,7 @@ document.addEventListener('DOMContentLoaded', function() {
 // Datos de los servicios desde el documento edit.txt
 const serviciosData = {
   "Gestión de Proyectos": {
-    descripcion: "Desde la planificación hasta la ejecución y optimización, en Dominican HubVix te acompañamos en todas las fases de tu proyecto. Implementando metodologías ágiles y estrategias personalizadas para garantizar eficiencia, productividad y resultados tangibles.",
+    descripcion: "Desde la planificación hasta la ejecución y optimización, en deyconic te acompañamos en todas las fases de tu proyecto. Implementando metodologías ágiles y estrategias personalizadas para garantizar eficiencia, productividad y resultados tangibles.",
     caracteristicas: [
       "Planificación estratégica y operativa",
       "Optimización de recursos y procesos",
