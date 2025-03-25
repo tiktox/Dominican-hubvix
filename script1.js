@@ -35,9 +35,9 @@
         'Sistema de compras gastronomiicas en línea con pago seguro',
       ],
       images: [
-        'https://scontent.fsti4-2.fna.fbcdn.net/v/t1.15752-9/478265202_1804853177034447_249973698979581056_n.png?_nc_cat=105&ccb=1-7&_nc_sid=0024fc&_nc_ohc=4thxc0aWlZEQ7kNvgFOdEux&_nc_oc=AdhQDbWTcvHt3u1GsAv0OxYQCOxcnU6GBlQZK-B4a0kaQyeyBYkIXpUZZSLleuF2tk8&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fsti4-2.fna&oh=03_Q7cD1gHYe9cOkAp30q52FO4QB5jpRiXxDN3lIwoCiydIfSQ4EA&oe=67E1880D',
-        'https://scontent.fsti4-1.fna.fbcdn.net/v/t1.15752-9/479380021_2585441061663906_710484672807515845_n.png?_nc_cat=109&ccb=1-7&_nc_sid=0024fc&_nc_ohc=TN_izW_6FSEQ7kNvgGQqsCi&_nc_oc=AdgnzJzW_BW5EnEmsbKuQru4NWiIKZJZvoETzRtZl0ktRzRdbAaP3PMqLIutLKCBDYM&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fsti4-1.fna&oh=03_Q7cD1gHNRzhEnmqCSxC9oAzvPoT4oOuwbqaBRScjvpiaglmdhQ&oe=67E1838C',
-        'https://scontent.fsti4-1.fna.fbcdn.net/v/t1.15752-9/479423376_2497233870482289_7255953713180058477_n.png?_nc_cat=108&ccb=1-7&_nc_sid=0024fc&_nc_ohc=o_6eIDbAm6kQ7kNvgFAhhRh&_nc_oc=Adh8YSvJMNC8k9C_K3yuI915gdTLWjxot0g9xtoc_u5mFo6kbaAaV05RLlncuEsbsjE&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fsti4-1.fna&oh=03_Q7cD1gFFB-Kzw53McripsN6GPBhDeYU72VkvJMoq1nO-OPZ2TA&oe=67E18D7E'
+        'https://scontent.fsti4-2.fna.fbcdn.net/v/t1.15752-9/486637443_627049213552040_1617877893249454248_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=0024fc&_nc_ohc=p4AOYGvcYooQ7kNvgGXz9Re&_nc_oc=AdkoJUigRRqJWo6JM8LfbOXwL-CPYdOnWA4UttwUT-3icOvZ_nWOkh-JTkAjwz6cqxg&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fsti4-2.fna&oh=03_Q7cD1wFqS9uWFwToH7Zg1hG5voPUmvrYewtF2EBSwypxknOafA&oe=680A3C81',
+        'https://scontent.fsti4-1.fna.fbcdn.net/v/t1.15752-9/485200699_1168441988251456_1021057818637083205_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=0024fc&_nc_ohc=hm6J55RwXwsQ7kNvgG1rSGW&_nc_oc=AdnDGMmLiK2gGKca1YDlAxjjVxkC0nbijfRnpZ2ENorCdaC5vAHmgLf4N2t9BisE-jU&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fsti4-1.fna&oh=03_Q7cD1wF3e6h5qqTQYFzFa0myXsrLcvr0DNc9pdl2x2bhkVbujw&oe=680A195C',
+        'https://scontent.fsti4-1.fna.fbcdn.net/v/t1.15752-9/484497481_1018566540159518_1549645460339140655_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=0024fc&_nc_ohc=Hi0M3DXviAEQ7kNvgEdJ536&_nc_oc=AdmMXlequ27Mc__-k8iYd07jg_ciLTFOpGu2Uy8wetbKHc0ZLJRhIiWitnnmLLsW__4&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fsti4-1.fna&oh=03_Q7cD1wH-hSX12EwV_bkAWUhXkPtqDhBxUroOpD-GqQMvQMnKHQ&oe=680A0DCE'
       ],
       similarProductLink: 'https://hubvix-8b0ea.web.app/' // Link añadido aquí
     },
@@ -55,9 +55,9 @@
         'Garantia de calidad para los vehiculos',
       ],
       images: [
-        'https://scontent.fsti4-1.fna.fbcdn.net/v/t1.15752-9/480940513_1920453902062450_7951088696095688981_n.png?_nc_cat=109&ccb=1-7&_nc_sid=0024fc&_nc_ohc=MN0c2Hvunm8Q7kNvgF-HaTa&_nc_oc=AdikX8foeDSIgRbKmXN0DWEh_ONL_PlS8zBcdUppkFNYLp1_owADhNoaQf8gpu6K1VM&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fsti4-1.fna&oh=03_Q7cD1gFf2fTPIHDt8o2x2RAI8TzFM1QH4pCtFv99csxz1JFpoA&oe=67E17593',
-        'https://scontent.fsti4-2.fna.fbcdn.net/v/t1.15752-9/480073662_927555899580789_1301874081901012094_n.png?_nc_cat=101&ccb=1-7&_nc_sid=0024fc&_nc_ohc=OoucvBRMPSIQ7kNvgGNE4O2&_nc_oc=Adh5whVznsnWH2sjhYvAuCuBpTZ4rWE5HHVWEv5FiyJJlLQpkGb--XVlvUSq9HPf8a4&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fsti4-2.fna&oh=03_Q7cD1gGhD8oF-rSvBUEjEkiGQetoAfI0KYIMz-cZmHEk2Mo6Fw&oe=67E16186',
-        'https://scontent.fsti4-1.fna.fbcdn.net/v/t1.15752-9/480054186_1027611749412093_4717539874143873127_n.png?_nc_cat=100&ccb=1-7&_nc_sid=0024fc&_nc_ohc=p44MRs5pJOkQ7kNvgFGe6Nf&_nc_oc=Adg1HcZHtTR7za_scHf-YKw9smCGzXxrn2l2Gy4NwtADJgq8eJjRGdsAwO1hR7qybI0&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fsti4-1.fna&oh=03_Q7cD1gE3q69K12uaF3izHnF9jup07OqRXsZ_Ha0lNtXQ2X1Elw&oe=67E18DF6'
+        'https://scontent.fsti4-1.fna.fbcdn.net/v/t1.15752-9/480054186_1027611749412093_4717539874143873127_n.png?_nc_cat=100&ccb=1-7&_nc_sid=0024fc&_nc_ohc=-iFvErgX_xEQ7kNvgFqCdU-&_nc_oc=AdnAplhWYITn5qdXsl7nbAqYOpbHbewAQNtZMyQmbGZPmy_j8_ZZ6aGI1cOdGVnFw2w&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fsti4-1.fna&oh=03_Q7cD1wEiG-u2RL3t6erIYsfLU7eZ6v6eYmhp1oiF-hGbdTeaCw&oe=680A3436',
+        'https://scontent.fsti4-2.fna.fbcdn.net/v/t1.15752-9/480073662_927555899580789_1301874081901012094_n.png?_nc_cat=101&ccb=1-7&_nc_sid=0024fc&_nc_ohc=qnIrBnZ2uAAQ7kNvgFXbF1l&_nc_oc=Adlp3lGR0xILEytXqjUXPLls-DO7zbVbE2P0s-v2FLT42pIhp0M-KMbeTiXjBWpGDKQ&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fsti4-2.fna&oh=03_Q7cD1wGZBbRz3p5KV9typVEJicOc5U8Uc7-KVUB1-YaBElX0tA&oe=680A4006',
+        'https://scontent.fsti4-2.fna.fbcdn.net/v/t1.15752-9/476200484_1164371728689633_822713249362344919_n.png?_nc_cat=107&ccb=1-7&_nc_sid=0024fc&_nc_ohc=kX5MmPPUGw8Q7kNvgFrAaUT&_nc_oc=Adlh58V3VzM-vFJNJWK0UBCnEfJlm8MFBRaU1MeiiLubX_R-tY1lGbfazIapNZpWU3s&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fsti4-2.fna&oh=03_Q7cD1wGx-TrbotdYO485qomOfeYIqgqhzFCoIgTBTdejlCIj8w&oe=680A2F74'
       ],
       similarProductLink: 'https://pro-innova-rd.firebaseapp.com/' // Link añadido aquí
     },
