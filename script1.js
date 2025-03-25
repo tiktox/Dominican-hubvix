@@ -16,9 +16,9 @@
         'Integración con sistemas de facturación electrónica'
       ],
       images: [
-        'https://scontent.fsti4-1.fna.fbcdn.net/v/t1.15752-9/479737888_991578068967874_230887108581911416_n.png?_nc_cat=111&ccb=1-7&_nc_sid=0024fc&_nc_ohc=9h3_8qhqimYQ7kNvgFdRe6o&_nc_oc=AdhVKQMT7cVZJfJQDZ7zwpPOJm-gWvRI7QiKhrP6i5Y_GFrh6M5GEW9DzssVxUruXhE&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fsti4-1.fna&oh=03_Q7cD1gHw3A5Z9Dy35XlUlcqSeZHQImMLG24Mrk3GGoyjHX6LiQ&oe=67DDFD81',
-        'https://scontent.fsti4-2.fna.fbcdn.net/v/t1.15752-9/475768834_909775531231122_6078577652801037164_n.png?_nc_cat=105&ccb=1-7&_nc_sid=0024fc&_nc_ohc=j73deA8pihMQ7kNvgFVN_hj&_nc_oc=AdiXFnMbjN2fmCviTBHjElXz8CqmUsr_L2mB4xFisEOERLOKQ1GInWdPHPCZFzKhmcg&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fsti4-2.fna&oh=03_Q7cD1gHgtP7EbPWTyexD1CM73V8GIf8FIA3R5nwJ0MhlNS0w8Q&oe=67DE0196',
-        'https://scontent.fsti4-2.fna.fbcdn.net/v/t1.15752-9/480568741_1044741707412982_283530811582575835_n.png?_nc_cat=102&ccb=1-7&_nc_sid=0024fc&_nc_ohc=OqvZd-Vs2RwQ7kNvgEPWAhm&_nc_oc=AdjsMA9DlEsHmJ0FLYDYY4gKS7Exe-7ZO6rvfb3SyY_WaFHDJdLGf9EfwXc7xzp7AF4&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fsti4-2.fna&oh=03_Q7cD1gE55E-wMUj-mZD3rpuGvxFABh7ij20b7Kvk2YWP44TIwQ&oe=67DDE8F6',
+        'https://scontent.fsti4-1.fna.fbcdn.net/v/t1.15752-9/482649829_3067503626750482_3554400521044362842_n.png?_nc_cat=108&ccb=1-7&_nc_sid=0024fc&_nc_ohc=kUZXV2xmjEYQ7kNvgEMhvcc&_nc_oc=AdlMtky3NXyI9g2vkaJOphHuYj-F-Ylc9aHaBhCdYvZ_RhydkMq-EY7Ll6X4cxf4WJQ&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fsti4-1.fna&oh=03_Q7cD1wHnWH1tI4oSdXcOlF5mbEIGhM39nn1WaxbfviD-ax5c-A&oe=680A198D',
+        'https://scontent.fsti4-2.fna.fbcdn.net/v/t1.15752-9/482175551_654371570400481_8350452813972014943_n.png?_nc_cat=101&ccb=1-7&_nc_sid=0024fc&_nc_ohc=R816XYhuPhUQ7kNvgFkjAcY&_nc_oc=AdkHYNcWHXOVANawXMEUALYWYTheTWN3NEawX73ShjZcUq701GUagpZiJTkncMA5QwM&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fsti4-2.fna&oh=03_Q7cD1wHJDKKnhkhrthmF0WLlRfvXbk3pCg4ujSeSJkRjHoyMgg&oe=680A285F',
+        'https://scontent.fsti4-2.fna.fbcdn.net/v/t1.15752-9/482266893_1006549318026295_2613513271942866677_n.png?_nc_cat=104&ccb=1-7&_nc_sid=0024fc&_nc_ohc=WBHV6Hc_HHMQ7kNvgFouyHO&_nc_oc=AdmzQBEOaJ_jyfM7g3t_U9_dxDoDX_ms17WucBfbjUt1koYraiwDgYVntcP5kyYYpF0&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fsti4-2.fna&oh=03_Q7cD1wH8A0C2GSRCgBKPOxpWT2Yp24uIb0U6rc7v_GEohcJM4g&oe=680A253E',
       ],
       similarProductLink: 'https://clinica-dental01.web.app/' // Link añadido aquí
     },
