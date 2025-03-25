@@ -1141,96 +1141,202 @@ document.addEventListener('DOMContentLoaded', () => {
       });
   });
 });
- document.addEventListener('DOMContentLoaded', function() {
-        // Inicializar AOS para animaciones de scroll
-        if (typeof AOS !== 'undefined') {
-            AOS.init({
-                duration: 800,
-                once: true,
-                offset: 50
+
+    // Configuración de EmailJS
+    emailjs.init("-wQhkbNrffDVsjkvy");
+    // Referencias a elementos del DOM
+    const elements = {
+        formModalContainer: document.getElementById('form-modal-container'),
+        closeFormModalBtn: document.querySelector('.close-form-modal'),
+        empresaForm: document.getElementById('empresa-form'),
+        alertContainer: document.getElementById('alert-container'),
+        thankYouMessage: document.getElementById('thank-you-message')
+    };
+
+    // Funciones de utilidad
+    const utils = {
+        showAlert(message, type) {
+            const alert = document.createElement('div');
+            alert.className = `alert alert-${type}`;
+            alert.textContent = message;
+            elements.alertContainer.innerHTML = '';
+            elements.alertContainer.appendChild(alert);
+            
+            setTimeout(() => alert.remove(), 5000);
+        },
+
+        getFormData() {
+            const formData = {};
+            const inputs = elements.empresaForm.querySelectorAll('input, textarea');
+            inputs.forEach(input => {
+                formData[input.id] = input.value;
             });
+            return formData;
         }
-        
-        // Funcionalidad para el carrusel de actualizaciones destacadas
-        const carousel = document.getElementById('featuredCarousel');
-        const slides = carousel.querySelectorAll('.carousel-slide');
-        const prevBtn = document.getElementById('featuredPrev');
-        const nextBtn = document.getElementById('featuredNext');
-        const indicators = document.getElementById('featuredIndicators').querySelectorAll('.indicator');
-        
-        let currentSlide = 0;
-        
-        function showSlide(index) {
-            slides[currentSlide].classList.remove('active');
-            indicators[currentSlide].classList.remove('active');
-            
-            currentSlide = (index + slides.length) % slides.length;
-            
-            slides[currentSlide].classList.add('active');
-            indicators[currentSlide].classList.add('active');
+    };
+
+    // Funciones del modal
+    const modalHandlers = {
+        open() {
+            elements.formModalContainer.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        },
+
+        close() {
+            elements.formModalContainer.classList.remove('active');
+            document.body.style.overflow = 'auto';
+            elements.empresaForm.reset();
+            elements.alertContainer.innerHTML = '';
+        },
+
+        showThankYou() {
+            elements.thankYouMessage.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        },
+
+        closeThankYou() {
+            elements.thankYouMessage.classList.remove('active');
+            document.body.style.overflow = 'auto';
         }
-        
-        // Optimizar para dispositivos táctiles
-        let touchStartX = 0;
-        let touchEndX = 0;
-        
-        carousel.addEventListener('touchstart', (e) => {
-            touchStartX = e.changedTouches[0].screenX;
-        }, {passive: true});
-        
-        carousel.addEventListener('touchend', (e) => {
-            touchEndX = e.changedTouches[0].screenX;
-            handleSwipe();
-        }, {passive: true});
-        
-        function handleSwipe() {
-            if (touchEndX < touchStartX) {
-                // Deslizar a la izquierda
-                showSlide(currentSlide + 1);
-            } else if (touchEndX > touchStartX) {
-                // Deslizar a la derecha
-                showSlide(currentSlide - 1);
+    };
+
+    // Manejador del formulario
+    const formHandler = {
+        async submit(e) {
+            e.preventDefault();
+            const formData = utils.getFormData();
+
+            try {
+                await emailjs.send(
+                    "service_vstac3d",
+                    "template_r2z381u",
+                    {
+                        to_email: "sp9979182@gmail.com",
+                        from_name: formData.empresa,
+                        from_email: formData.email,
+                        message: Object.entries(formData)
+                            .map(([key, value]) => `${key}: ${value}`)
+                            .join('\n')
+                    }
+                );
+
+                modalHandlers.close();
+                modalHandlers.showThankYou();
+                setTimeout(modalHandlers.closeThankYou, 5000);
+            } catch (error) {
+                console.error('Error al enviar el formulario:', error);
+                utils.showAlert('Error al enviar el formulario. Por favor, intente nuevamente.', 'error');
             }
         }
-        
-        prevBtn.addEventListener('click', () => showSlide(currentSlide - 1));
-        nextBtn.addEventListener('click', () => showSlide(currentSlide + 1));
-        
-        indicators.forEach((indicator, index) => {
-            indicator.addEventListener('click', () => showSlide(index));
-        });
-        
-        // Optimizar intervalo para mejor rendimiento en móviles
-        let carouselInterval = setInterval(() => showSlide(currentSlide + 1), 9000);
-        
-        // Detener autoplay cuando se interactúa con el carrusel
-        const pauseAutoplay = () => clearInterval(carouselInterval);
-        const resumeAutoplay = () => {
-            clearInterval(carouselInterval);
-            carouselInterval = setInterval(() => showSlide(currentSlide + 1), 9000);
-        };
-        
-        carousel.addEventListener('mouseenter', pauseAutoplay);
-        carousel.addEventListener('mouseleave', resumeAutoplay);
-        carousel.addEventListener('touchstart', pauseAutoplay, {passive: true});
-        carousel.addEventListener('touchend', resumeAutoplay, {passive: true});
-        
-        // Precargar imágenes para mejor rendimiento
-        function preloadImages() {
-            slides.forEach(slide => {
-                const img = slide.querySelector('img');
-                if (img) {
-                    const newImg = new Image();
-                    newImg.src = img.src;
-                }
-            });
-        }
-        
-        preloadImages();
-        
-        // Ajustar para diferentes orientaciones de dispositivo
-        window.addEventListener('resize', function() {
-            // Reiniciar el carrusel si cambia la orientación del dispositivo
-            showSlide(currentSlide);
-        });
+    };
+
+    // Event listeners
+    elements.empresaForm.addEventListener('submit', formHandler.submit);
+    elements.closeFormModalBtn.addEventListener('click', modalHandlers.close);
+    elements.formModalContainer.addEventListener('click', (e) => {
+        if (e.target === elements.formModalContainer) modalHandlers.close();
     });
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && elements.formModalContainer.classList.contains('active')) {
+            modalHandlers.close();
+        }
+    });
+
+    // Exportar funciones para uso externo
+    window.modalHandlers = modalHandlers;
+    window.closeThankYouMessage = modalHandlers.closeThankYou;
+   
+    document.addEventListener('DOMContentLoaded', function() {
+      // Inicializar AOS para animaciones de scroll
+      if (typeof AOS !== 'undefined') {
+          AOS.init({
+              duration: 800,
+              once: true,
+              offset: 50
+          });
+      }
+      
+      // Funcionalidad para el carrusel de actualizaciones destacadas
+      const carousel = document.getElementById('featuredCarousel');
+      const slides = carousel.querySelectorAll('.carousel-slide');
+      const prevBtn = document.getElementById('featuredPrev');
+      const nextBtn = document.getElementById('featuredNext');
+      const indicators = document.getElementById('featuredIndicators').querySelectorAll('.indicator');
+      
+      let currentSlide = 0;
+      
+      function showSlide(index) {
+          slides[currentSlide].classList.remove('active');
+          indicators[currentSlide].classList.remove('active');
+          
+          currentSlide = (index + slides.length) % slides.length;
+          
+          slides[currentSlide].classList.add('active');
+          indicators[currentSlide].classList.add('active');
+      }
+      
+      // Optimizar para dispositivos táctiles
+      let touchStartX = 0;
+      let touchEndX = 0;
+      
+      carousel.addEventListener('touchstart', (e) => {
+          touchStartX = e.changedTouches[0].screenX;
+      }, {passive: true});
+      
+      carousel.addEventListener('touchend', (e) => {
+          touchEndX = e.changedTouches[0].screenX;
+          handleSwipe();
+      }, {passive: true});
+      
+      function handleSwipe() {
+          if (touchEndX < touchStartX) {
+              // Deslizar a la izquierda
+              showSlide(currentSlide + 1);
+          } else if (touchEndX > touchStartX) {
+              // Deslizar a la derecha
+              showSlide(currentSlide - 1);
+          }
+      }
+      
+      prevBtn.addEventListener('click', () => showSlide(currentSlide - 1));
+      nextBtn.addEventListener('click', () => showSlide(currentSlide + 1));
+      
+      indicators.forEach((indicator, index) => {
+          indicator.addEventListener('click', () => showSlide(index));
+      });
+      
+      // Optimizar intervalo para mejor rendimiento en móviles
+      let carouselInterval = setInterval(() => showSlide(currentSlide + 1), 9000);
+      
+      // Detener autoplay cuando se interactúa con el carrusel
+      const pauseAutoplay = () => clearInterval(carouselInterval);
+      const resumeAutoplay = () => {
+          clearInterval(carouselInterval);
+          carouselInterval = setInterval(() => showSlide(currentSlide + 1), 9000);
+      };
+      
+      carousel.addEventListener('mouseenter', pauseAutoplay);
+      carousel.addEventListener('mouseleave', resumeAutoplay);
+      carousel.addEventListener('touchstart', pauseAutoplay, {passive: true});
+      carousel.addEventListener('touchend', resumeAutoplay, {passive: true});
+      
+      // Precargar imágenes para mejor rendimiento
+      function preloadImages() {
+          slides.forEach(slide => {
+              const img = slide.querySelector('img');
+              if (img) {
+                  const newImg = new Image();
+                  newImg.src = img.src;
+              }
+          });
+      }
+      
+      preloadImages();
+      
+      // Ajustar para diferentes orientaciones de dispositivo
+      window.addEventListener('resize', function() {
+          // Reiniciar el carrusel si cambia la orientación del dispositivo
+          showSlide(currentSlide);
+      });
+  });
+    
