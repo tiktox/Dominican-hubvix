@@ -2433,7 +2433,7 @@ font-size: 0.9rem;
 
 
 
-  body {
+body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
@@ -2467,8 +2467,8 @@ font-size: 0.9rem;
         
         .logo-2 {
             border-radius: 50px;
-            position: fixed;
-            left: 35px;
+            position: absolute;
+            left: 5px;
             width: 40px;
             height: 40px;
             transition: all 0.3s ease;
