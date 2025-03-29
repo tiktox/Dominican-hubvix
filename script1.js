@@ -1340,3 +1340,37 @@ document.addEventListener('DOMContentLoaded', () => {
       });
   });
     
+
+
+
+
+ document.addEventListener('DOMContentLoaded', function() {
+            const floatingElement = document.querySelector('.floating-element');
+            
+            // Función para alternar entre estados
+            function toggleElement() {
+                floatingElement.classList.toggle('expanded');
+            }
+            
+            // Ciclo de expansión y contracción cada 5 segundos
+            function startCycle() {
+                setTimeout(function() {
+                    // Expande
+                    floatingElement.classList.add('expanded');
+                    
+                    setTimeout(function() {
+                        // Contrae
+                        floatingElement.classList.remove('expanded');
+                        
+                        // Reinicia el ciclo
+                        startCycle();
+                    }, 5000);
+                }, 5000);
+            }
+            
+            // Inicia el ciclo
+            startCycle();
+            
+            // Permite toggle manual al hacer clic
+            floatingElement.addEventListener('click', toggleElement);
+        });
