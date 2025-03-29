@@ -2433,7 +2433,7 @@ font-size: 0.9rem;
 
 
 
- body {
+  body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
@@ -2463,12 +2463,11 @@ font-size: 0.9rem;
             height: 50px;
             border-radius: 12px;
             padding-left: 100px;
-        
         }
         
         .logo-2 {
             border-radius: 50px;
-            position: sticky;
+            position: fixed;
             left: 35px;
             width: 40px;
             height: 40px;
@@ -2476,7 +2475,7 @@ font-size: 0.9rem;
         }
         
         .floating-element.expanded .logo-2 {
-            border-radius:12px;
+            border-radius: 12px;
             width: 40px;
             height: 40px;
             margin-right: 100px;
