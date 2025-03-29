@@ -1344,7 +1344,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
- document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function() {
             const floatingElement = document.querySelector('.floating-element');
             
             // Función para alternar entre estados
